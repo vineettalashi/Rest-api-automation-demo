@@ -1,0 +1,22 @@
+{
+  "customer": "PLUTO1",
+  "ccyPair": "EURUSD",
+  "type": "VanillaOption",
+  "style": "$STYLE",
+  "direction": "BUY",
+  "strategy": "a",
+  "tradeDate": "2017-08-11",
+  "exerciseStartDate": "2017-08-12",
+  "expiryDate": "2017-08-17",
+  "premiumDate": "2017-08-21",
+  "deliveryDate": "2017-08-22",
+  "amount1": 0.00,
+  "amount2": 0.00,
+  "rate": 1.12,
+  "payCcy": "a",
+  "premium": 0.20,
+  "premiumCcy": "a",
+  "premiumType": "a",
+  "legalEntity": "CS Zurich",
+  "trader": 123.00
+}

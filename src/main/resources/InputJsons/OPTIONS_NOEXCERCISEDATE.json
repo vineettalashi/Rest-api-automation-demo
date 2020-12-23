@@ -1,0 +1,21 @@
+{
+  "customer": "PLUTO1",
+  "ccyPair": "EURUSD",
+  "type": "VanillaOption",
+  "style": "$STYLE",
+  "direction": "BUY",
+  "strategy": "CALL",
+  "tradeDate": "$TRADE_DATE",
+  "amount1": 1000000.00,
+  "amount2": 1120000.00,
+  "rate": 1.12,
+  "deliveryDate": "$DELIVERY_DATE",
+  "expiryDate": "$EXPIRY_DATE",
+  "payCcy": "USD",
+  "premium": 0.20,
+  "premiumCcy": "USD",
+  "premiumType": "%USD",
+  "premiumDate": "$PREMIUM_DATE",
+  "legalEntity": "CS Zurich",
+  "trader": "Johann Baumfiddler"
+}
