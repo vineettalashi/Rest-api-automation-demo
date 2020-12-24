@@ -9,7 +9,8 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
         plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" },
         glue = "com.qe.vt.steps",
-        features = "classpath:features"
+        features = "classpath:features",
+        monochrome=true
 )
 public class FeatureRunner {
 

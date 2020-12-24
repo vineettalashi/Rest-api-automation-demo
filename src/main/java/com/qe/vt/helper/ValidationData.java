@@ -27,5 +27,25 @@ public class ValidationData {
 		pojo.setCcyPair(TestDataProvider.getCurrencyCodePair());
 		return pojo;
 	}
+	
+	public static RequestPojo getWeekendValueDateData() {
+		RequestPojo pojo = new RequestPojo();
+		String weekendDay=DateUtils.getWeekendDate();
+		pojo.setTradeDate(DateUtils.getPastDate(weekendDay, 1));
+		pojo.setValueDate(weekendDay);
+		return pojo;
+	}
+	
+	public static RequestPojo getInvalidCounterpartyData() {
+		RequestPojo pojo = new RequestPojo();
+		pojo.setCustomer(TestDataProvider.getInvalidCustomer());
+		return pojo;
+	}
+	
+	public static RequestPojo getInvalidLegalEntityData() {
+		RequestPojo pojo = new RequestPojo();
+		pojo.setLegalEntity(TestDataProvider.getInvalidLegalEntity());
+		return pojo;
+	}
 
 }

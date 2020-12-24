@@ -11,7 +11,7 @@ import com.qe.vt.helper.RequestSpecificationBuilder;
 import com.qe.vt.helper.RestApiController;
 import com.qe.vt.helper.ValidationData;
 import com.qe.vt.pojo.ResponsePojo;
-import com.qe.vt.utils.JacksonUtils;
+import com.qe.vt.utils.JsonUtils;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -25,10 +25,10 @@ public class ValidationsSteps {
 	
 	@Given("^User has valid data to post for happy flow$")
 	public void UserHasValidDataToPost() throws IOException {	
-	    jsonToPost = JacksonUtils.getJsonToPost(new File(Constants.JSON_FILE_LOCATION_TRADE), ValidationData.getValidData());	
+	    jsonToPost = JsonUtils.getJsonToPost(new File(Constants.JSON_FILE_LOCATION_TRADE), ValidationData.getValidData());	
 	}
 	
-	@When("^User posts the json data$")
+	@When("^User posts the json request$")
 	public void UserPostTheData() throws Throwable {
 		reqstSpecBuilder = new RequestSpecificationBuilder()
 	            .setBaseUrl(PropertiesLoader.getInstance().getBaseUrl())
@@ -44,14 +44,29 @@ public class ValidationsSteps {
 	    Assert.assertNull(response.getMessages());
 	}
 	
-	@Given("^User has Value Date older than Trade Date$")
-	public void UserHasInvalidValueDate() throws IOException {	
-	    jsonToPost = JacksonUtils.getJsonToPost(new File(Constants.JSON_FILE_LOCATION_TRADE), ValidationData.getValueDateOlderThanTradeDateData());	
+	@Then("Verify the response contains the {string} error message")
+	public void aResponseContainsTheRequiredErrorMessage(String string) throws Throwable {
+		Assert.assertEquals("ERROR",response.getStatus());
+	    Assert.assertTrue("Expected Error: "+string+"Actual Error: "+response.getMessages().get(0),response.getMessages().get(0).contains(string));
 	}
 	
-	@Then("^Verify the response contains the required error message$")
-	public void aResponseContainsTheRequiredErrorMessage() throws Throwable {
-		Assert.assertEquals("ERROR",response.getStatus());
-	    Assert.assertTrue(response.getMessages().get(0).contains("cannot be null and it has to be after trade date"));
+	@Given("^User has Value Date older than Trade Date in input$")
+	public void UserHasInvalidValueDate() throws IOException {	
+	    jsonToPost = JsonUtils.getJsonToPost(new File(Constants.JSON_FILE_LOCATION_TRADE), ValidationData.getValueDateOlderThanTradeDateData());	
+	}
+	
+	@Given("^User has the Value Date on weekend in input$")
+	public void UserHasWeekendValueDate() throws IOException {	
+	    jsonToPost = JsonUtils.getJsonToPost(new File(Constants.JSON_FILE_LOCATION_TRADE), ValidationData.getWeekendValueDateData());	
+	}
+	
+	@Given("^User has Invalid counterparty/customer in input$")
+	public void UserHasInvalidCustomerName() throws IOException {	
+	    jsonToPost = JsonUtils.getJsonToPost(new File(Constants.JSON_FILE_LOCATION_TRADE), ValidationData.getInvalidCounterpartyData());	
+	}
+	
+	@Given("^User has Invalid Legal entity in input$")
+	public void UserHasInvalidLE() throws IOException {	
+	    jsonToPost = JsonUtils.getJsonToPost(new File(Constants.JSON_FILE_LOCATION_TRADE), ValidationData.getInvalidLegalEntityData());	
 	}
 }
