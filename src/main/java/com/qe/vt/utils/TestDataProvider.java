@@ -24,14 +24,18 @@ public class TestDataProvider {
         return RandomUtils.getRandomString(RandomUtils.getRandomSingleDigit());
     }
 
-    public static String getCurrencyCode() {
+    public static String getValidISOCurrencyCode() {
         return Currency.getAvailableCurrencies().toArray()[RandomUtils.getRandomDigit(0,225)].toString();
+    }
+    
+    public static String getInvalidISOCurrencyCode() {
+        return "ABCUSD";
     }
 
     public static String getCurrencyCodePair() {
         String currencyPair;
-        String currency1 = getCurrencyCode();
-        String currency2 = getCurrencyCode();
+        String currency1 = getValidISOCurrencyCode();
+        String currency2 = getValidISOCurrencyCode();
         currencyPair = currency1 + currency2;
         return currencyPair;
     }

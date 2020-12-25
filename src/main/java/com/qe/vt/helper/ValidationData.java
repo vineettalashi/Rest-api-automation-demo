@@ -6,7 +6,18 @@ import com.qe.vt.utils.TestDataProvider;
 
 public class ValidationData {
 	
-	public static RequestPojo getValidData() {
+	public static RequestPojo getValidDataForTradeSpotForward() {
+		RequestPojo pojo = new RequestPojo();
+		pojo.setTrader(TestDataProvider.getFullName());
+		pojo.setTradeDate(DateUtils.getWeekdayDate());
+		pojo.setValueDate(DateUtils.getWeekdayDateAhead(pojo.getTradeDate()));
+		pojo.setCustomer(TestDataProvider.getValidCustomer());
+		pojo.setLegalEntity(TestDataProvider.getValidLegalEntity());
+		pojo.setCcyPair(TestDataProvider.getCurrencyCodePair());
+		return pojo;
+	}
+	
+	public static RequestPojo getValidDataForOptions() {
 		RequestPojo pojo = new RequestPojo();
 		pojo.setTrader(TestDataProvider.getFullName());
 		pojo.setTradeDate(DateUtils.getWeekdayDate());
@@ -48,4 +59,15 @@ public class ValidationData {
 		return pojo;
 	}
 
+	public static RequestPojo getInvalidProductTypeData() {
+		RequestPojo pojo = new RequestPojo();
+		pojo.setType(TestDataProvider.getInvalidProductType());
+		return pojo;
+	}
+	
+	public static RequestPojo getInvalidCurrencyPairData() {
+		RequestPojo pojo = new RequestPojo();
+		pojo.setCcyPair(TestDataProvider.getInvalidISOCurrencyCode());
+		return pojo;
+	}
 }

@@ -6,6 +6,11 @@ import lombok.Data;
 
 @Data
 public class ResponsePojo {
-	private String status;
 	private List<String> messages;
+	private String status;
+	private String message;
+	private String timestamp;
+	private String error;
+	private String exception;
+	private String path;
 }
