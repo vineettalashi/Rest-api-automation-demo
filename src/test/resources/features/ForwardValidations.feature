@@ -1,6 +1,6 @@
 Feature: Forward validations Feature
   As a user
-  I want to perform Trade Validations
+  I want to perform Forward Validations
   So that I acheive a business goal
 
    Scenario: Verify the Validate endpoint for Valid Data

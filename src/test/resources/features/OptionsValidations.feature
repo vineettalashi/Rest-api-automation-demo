@@ -25,12 +25,14 @@ Feature: Options validations Feature
    Scenario: Verify error message when Exercise Start Date is before Trade Date
     Given User has data having Exercise Start Date before Trade Date
     When User posts the json request 
+    Then Verify the response status is 'ERROR'
     Then Verify the response contains the 'Trade date | has to be before exercise start date' error message
     
     @OptionsInValidData @Defect
    Scenario: Verify error message when Exercise Start Date is after Expiry Date
     Given User has data having Exercise Start Date after Expiry Date
     When User posts the json request 
+    Then Verify the response status is 'ERROR'
     Then Verify the response contains the 'Exercise start date | has to be before expiry date' error message
     
     @OptionsInValidData
@@ -51,7 +53,7 @@ Feature: Options validations Feature
    	When User posts the json request
     Then Verify the response contains the 'is not supported. Supported counterparties: [[PLUTO2, PLUTO1]]' error message
     
-    @OptionsInValidData
+    @OptionsInValidData @Defect
     Scenario: Verify error message when Invalid Legal Entity is provided. Requirement: It should accept only CS Zurich as LE. Defect: It is accepting any string as Legal Entity
     Given User has Invalid Legal entity for product type 'Options'
    	When User posts the json request
@@ -62,3 +64,11 @@ Feature: Options validations Feature
     Given User has Invalid ISO Currency for product type 'Options'
    	When User posts the json request
     Then Verify the response contains the 'Invalid currency pair' error message
+    
+    #Acc to requirement : American option style will have in addition the exerciseStartDate, which has to be after the trade date but before the expiry date
+    #Defect : According to business requirement, exerciseStartDate should be present in request body but it is returning Success without it also.
+    @OptionsInValidData @Defect1
+    Scenario: Verify error message when American Style is provided without Exercise Start Date
+    Given User has data with American Style and without Excercise Start Date
+    When User posts the json request
+    Then Verify the response status is 'ERROR'

@@ -29,6 +29,10 @@ public class ValidationData {
 		return pojo;
 	}
 	
+	public static RequestPojo getAmericanStyleWithoutStartExerciseDateData() {
+		return getValidDataForOptionsWithAmericanStyle();
+	}
+	
 	public static RequestPojo getValueDateOlderThanTradeDateData() {
 		RequestPojo pojo = new RequestPojo();
 		pojo.setTrader(TestDataProvider.getFullName());
@@ -117,4 +121,5 @@ public class ValidationData {
 		pojo.setDeliveryDate(DateUtils.getWeekdayDateAhead(pojo.getPremiumDate()));
 		return pojo;
 	}
+
 }

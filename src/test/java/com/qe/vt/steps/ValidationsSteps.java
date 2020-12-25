@@ -38,7 +38,7 @@ public class ValidationsSteps {
 	
 	@Given("^User has valid data to post for Options with American Style$")
 	public void UserHasValidDataToPostOptionsAmerican() throws IOException { 		
-	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath("Options")), ValidationData.getValidDataForOptionsWithEuropeanStyle());	
+	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath("OptionsWithExerciseDate")), ValidationData.getValidDataForOptionsWithEuropeanStyle());	
 	}
 		
 	@When("^User posts the json request$")
@@ -49,9 +49,14 @@ public class ValidationsSteps {
 	}
 	
 	@Then("^Verify the response is valid$")
-	public void verifyResponse() throws Throwable {
+	public void verifyResponse(){
 	    Assert.assertEquals("SUCCESS",response.getStatus());
 	    Assert.assertNull(response.getMessages());
+	}
+	
+	@Then("Verify the response status is {string}")
+	public void verifyResponseStatus(String expectedStatus) {
+	    Assert.assertEquals(expectedStatus,response.getStatus());
 	}
 	
 	@Then("Verify the response contains the {string} error message")
@@ -124,6 +129,11 @@ public class ValidationsSteps {
 	@Given("^User has data having Exercise Start Date after Expiry Date$")
 	public void UserHasInValidDataExerciseStartDateAfterExpiryDate() throws IOException {	
 	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath("OptionsWithExerciseDate")), ValidationData.getExerciseStartDateAfterExpiryDateInvalidData());	
+	}
+	
+	@Given("^User has data with American Style and without Excercise Start Date$")
+	public void UserHasAmericanStyleWithoutExerciseStartDate() throws IOException {	
+	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath("Options")), ValidationData.getAmericanStyleWithoutStartExerciseDateData());	
 	}
 	
 	public String getJsonFilePath(String type) {
