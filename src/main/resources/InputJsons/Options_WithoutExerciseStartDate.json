@@ -16,5 +16,6 @@
    "premiumCcy":"USD",
    "premiumType":"%USD",
    "premiumDate":"2017-08-12",
-   "legalEntity":"CS Zurich"
+   "legalEntity":"CS Zurich",
+   "trader": "Johann Baumfiddler"
  }

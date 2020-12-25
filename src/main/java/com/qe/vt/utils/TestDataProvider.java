@@ -44,5 +44,17 @@ public class TestDataProvider {
         return "INVALID_PRODUCT_TYPE";
     }
 
+	public static String getStyleAsEuropean() {
+		return "EUROPEAN";
+	}
+	
+	public static String getStyleAsAmerican() {
+		return "AMERICAN";
+	}
+
+	public static String getInvalidStyle() {
+		return RandomUtils.getRandomString(RandomUtils.getRandomSingleDigit());
+	}
+
    
 }

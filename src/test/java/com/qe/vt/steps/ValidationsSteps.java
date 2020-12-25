@@ -31,9 +31,14 @@ public class ValidationsSteps {
 	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath(type)), ValidationData.getValidDataForTradeSpotForward());	
 	}
 	
-	@Given("^User has valid data to post for product type Options$")
-	public void UserHasValidDataToPostOptions() throws IOException { 		
-	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath("Options")), ValidationData.getValidDataForOptions());	
+	@Given("^User has valid data to post for Options with European Style$")
+	public void UserHasValidDataToPostOptionsEuropean() throws IOException { 		
+	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath("Options")), ValidationData.getValidDataForOptionsWithEuropeanStyle());	
+	}
+	
+	@Given("^User has valid data to post for Options with American Style$")
+	public void UserHasValidDataToPostOptionsAmerican() throws IOException { 		
+	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath("Options")), ValidationData.getValidDataForOptionsWithEuropeanStyle());	
 	}
 		
 	@When("^User posts the json request$")
@@ -50,17 +55,21 @@ public class ValidationsSteps {
 	}
 	
 	@Then("Verify the response contains the {string} error message")
-	public void responseContainsTheRequiredErrorMessage(String string) throws Throwable {
-		if(null==response.getException()) {
-			Assert.assertEquals("ERROR",response.getStatus());
-	    	Assert.assertTrue("Expected Error: "+string+"Actual Error: "+response.getMessages().get(0),response.getMessages().get(0).contains(string));
-		}
-		else {
-			if(response.getStatus().equals("400")) Assert.assertEquals("Bad Request",response.getError());
-			else if(response.getStatus().equals("500")) Assert.assertEquals("Internal Server Error",response.getError());
-			Assert.assertTrue("Expected Error: "+string+"Actual Error: "+response.getMessage(),response.getMessage().contains(string));
-		}
-	}
+	public void responseContainsTheRequiredErrorMessage(String messages) throws Throwable {
+		String msg="";
+		for(String message : messages.split("\\|")) {
+			msg = message.trim();
+			if(null==response.getException()) {
+				Assert.assertEquals("ERROR",response.getStatus());
+				Assert.assertTrue("Expected Error: "+msg+"Actual Error: "+response.getMessages().get(0),response.getMessages().get(0).contains(msg));
+			}
+			else {
+				if(response.getStatus().equals(Constants.BAD_REQUEST)) Assert.assertEquals("Bad Request",response.getError());
+				else if(response.getStatus().equals(Constants.INTERNAL_SERVER_ERROR)) Assert.assertEquals("Internal Server Error",response.getError());
+				Assert.assertTrue("Expected Error: "+msg+"Actual Error: "+response.getMessage(),response.getMessage().contains(msg));
+			}
+		 }
+	   }
 	
 	@Given("User has Value Date older than Trade Date for product type {string}")
 	public void UserHasInvalidValueDate(String type) throws IOException {	
@@ -87,16 +96,42 @@ public class ValidationsSteps {
 	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath("Spot")), ValidationData.getInvalidProductTypeData());	
 	}
 	
+	@Given("^User has Invalid Style in input$")
+	public void UserHasInvalidStyle() throws IOException {	
+	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath("Options")), ValidationData.getInvalidStyleData());	
+	}
+	
 	@Given("User has Invalid ISO Currency for product type {string}")
 	public void UserHasInvalidISOCurrency(String type) throws IOException {	
 	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath(type)), ValidationData.getInvalidCurrencyPairData());	
+	}
+	
+	@Given("^User has data having Expiry Date after Delivery Date$")
+	public void UserHasInValidDataExpiryDateAfterDeliveryDate() throws IOException {	
+	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath("OptionsWithExerciseDate")), ValidationData.getExpiryDateAfterDeliveryDateInvalidData());	
+	}
+	
+	@Given("^User has data having Premium Date after Delivery Date$")
+	public void UserHasInValidDataPremiumDateAfterDeliveryDate() throws IOException {	
+	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath("OptionsWithExerciseDate")), ValidationData.getPremiumDateAfterDeliveryDateInvalidData());	
+	}
+	
+	@Given("^User has data having Exercise Start Date before Trade Date$")
+	public void UserHasInValidDataExerciseStartDateBeforeTradeDate() throws IOException {	
+	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath("OptionsWithExerciseDate")), ValidationData.getExerciseStartDateBeforeTradeDateInvalidData());	
+	}
+	
+	@Given("^User has data having Exercise Start Date after Expiry Date$")
+	public void UserHasInValidDataExerciseStartDateAfterExpiryDate() throws IOException {	
+	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath("OptionsWithExerciseDate")), ValidationData.getExerciseStartDateAfterExpiryDateInvalidData());	
 	}
 	
 	public String getJsonFilePath(String type) {
 		if(type.equalsIgnoreCase("Trade"))  return Constants.JSON_FILE_LOCATION_TRADE;
 		else if(type.equalsIgnoreCase("Spot")) return Constants.JSON_FILE_LOCATION_SPOT;
 		else if(type.equalsIgnoreCase("Forward")) return Constants.JSON_FILE_LOCATION_FORWARD;
-		else if(type.equalsIgnoreCase("Options")) return Constants.JSON_FILE_LOCATION_OPTION;
+		else if(type.equalsIgnoreCase("Options")) return Constants.JSON_FILE_LOCATION_OPTIONS_WITHOUT_EXERCISE_START_DATE;
+		else if(type.equalsIgnoreCase("OptionsWithExerciseDate")) return Constants.JSON_FILE_LOCATION_OPTIONS_WITH_EXERCISE_START_DATE;
 		return null;
 	}
 }
