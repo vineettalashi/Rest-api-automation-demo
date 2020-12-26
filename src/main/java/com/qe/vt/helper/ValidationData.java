@@ -1,5 +1,8 @@
 package com.qe.vt.helper;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import com.qe.vt.pojo.RequestPojo;
 import com.qe.vt.utils.DateUtils;
 import com.qe.vt.utils.TestDataProvider;
@@ -15,6 +18,24 @@ public class ValidationData {
 		pojo.setLegalEntity(TestDataProvider.getValidLegalEntity());
 		pojo.setCcyPair(TestDataProvider.getCurrencyCodePair());
 		return pojo;
+	}
+	
+	public static List<RequestPojo> getValidDataForBatchApi() {
+		List<RequestPojo> listOfPojo = new LinkedList<RequestPojo>();
+		listOfPojo.add(new RequestPojo());
+		listOfPojo.add(new RequestPojo());
+		listOfPojo.add(new RequestPojo());
+		listOfPojo.add(new RequestPojo());
+		return listOfPojo;
+	}
+	
+	public static List<RequestPojo> getInvalidDataForBatchApi() {
+		List<RequestPojo> listOfPojo = new LinkedList<RequestPojo>();
+		listOfPojo.add(getInvalidCounterpartyData());
+		listOfPojo.add(getInvalidCurrencyPairData());
+		listOfPojo.add(getExpiryDateAfterDeliveryDateInvalidData());
+		listOfPojo.add(getInvalidStyleData());
+		return listOfPojo;
 	}
 	
 	public static RequestPojo getValidDataForOptionsWithEuropeanStyle() {
@@ -132,6 +153,15 @@ public class ValidationData {
 		pojo.setAmount2(0);
 		pojo.setPayCcy("");
 		pojo.setPremium(0);
+		return pojo;
+	}
+	
+	public static RequestPojo getInvalidAmountsInvalidRateInvalidTrader() {
+		RequestPojo pojo = new RequestPojo();
+		pojo.setAmount1(0);
+		pojo.setAmount2(0);
+		pojo.setTrader("");
+		pojo.setRate(0);
 		return pojo;
 	}
 

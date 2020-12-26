@@ -43,5 +43,9 @@ public class PropertiesLoader {
     public  String getValidateBatchUrl(){
         return props.getProperty("resource.url.validateBatch");
     }
+    
+    public  String getBatchApiEnabledStatus(){
+        return props.getProperty("batch");
+    }
 
  }
