@@ -33,6 +33,10 @@ public class ValidationData {
 		return getValidDataForOptionsWithAmericanStyle();
 	}
 	
+	public static RequestPojo getEuropeanStyleWithStartExerciseDateData() {
+		return getValidDataForOptionsWithEuropeanStyle();
+	}
+	
 	public static RequestPojo getValueDateOlderThanTradeDateData() {
 		RequestPojo pojo = new RequestPojo();
 		pojo.setTrader(TestDataProvider.getFullName());

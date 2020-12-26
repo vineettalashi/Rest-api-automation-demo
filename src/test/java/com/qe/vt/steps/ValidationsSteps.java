@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import org.junit.Assert;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qe.vt.helper.Constants;
 import com.qe.vt.helper.PropertiesLoader;
 import com.qe.vt.helper.RequestSpecificationBuilder;
@@ -24,11 +25,12 @@ public class ValidationsSteps {
 	ResponsePojo response;
 	String jsonToPost;
 	String jsonFile;
+	ObjectMapper mapper = new ObjectMapper();
 	PropertiesLoader propLoader = PropertiesLoader.getInstance();
 	
 	@Given("User has valid data to post for {string}")
 	public void UserHasValidDataToPostPrdtType(String type) throws IOException { 		
-	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath(type)), ValidationData.getValidDataForTradeSpotForward());	
+	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath(type)), ValidationData.getValidDataForTradeSpotForward());
 	}
 	
 	@Given("^User has valid data to post for Options with European Style$")
@@ -45,7 +47,14 @@ public class ValidationsSteps {
 	public void UserPostTheData() throws Throwable {
 		reqstSpecBuilder = new RequestSpecificationBuilder().setBaseUrl(propLoader.getBaseUrl()).setContentTypeJson().setAcceptasJson();
 	    RestApiController restApiController = new RestApiController(reqstSpecBuilder);
-	    response = restApiController.executePostMethodWithRequestBody(propLoader.getValidateUrl(), jsonToPost);
+	    response = restApiController.executePostMethodWithRequestBodyAsString(propLoader.getValidateUrl(), jsonToPost);
+	}
+	
+	@When("^User posts the json request as object$")
+	public void UserPostTheDataAsObject() throws Throwable {
+		reqstSpecBuilder = new RequestSpecificationBuilder().setBaseUrl(propLoader.getBaseUrl()).setContentTypeJson().setAcceptasJson();
+	    RestApiController restApiController = new RestApiController(reqstSpecBuilder);
+	    response = restApiController.executePostMethodWithRequestBodyAsObject(propLoader.getValidateUrl(), requestPojo);
 	}
 	
 	@Then("^Verify the response is valid$")
@@ -103,7 +112,7 @@ public class ValidationsSteps {
 	
 	@Given("^User has Invalid Style in input$")
 	public void UserHasInvalidStyle() throws IOException {	
-	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath("Options")), ValidationData.getInvalidStyleData());	
+	    requestPojo = mapper.readValue(JsonUtils.getJsonToPost(new File(getJsonFilePath("Options")), ValidationData.getInvalidStyleData()),RequestPojo.class);	
 	}
 	
 	@Given("User has Invalid ISO Currency for product type {string}")
@@ -118,7 +127,18 @@ public class ValidationsSteps {
 	
 	@Given("^User has data having Premium Date after Delivery Date$")
 	public void UserHasInValidDataPremiumDateAfterDeliveryDate() throws IOException {	
-	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath("OptionsWithExerciseDate")), ValidationData.getPremiumDateAfterDeliveryDateInvalidData());	
+	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath("OptionsWithExerciseDate")), ValidationData.getPremiumDateAfterDeliveryDateInvalidData());
+	    requestPojo = mapper.readValue(jsonToPost, RequestPojo.class);
+	}
+	
+	@Then("^Verify the response contains the correct error message when Premium Date is after Delivery Date$")
+	public void verifyErrorMsgWhenInValidDataPremiumDateAfterDeliveryDate() throws IOException {	
+		Assert.assertEquals("Premium date "+requestPojo.getPremiumDate()+" has to be before delivery date "+requestPojo.getDeliveryDate(),response.getMessages().get(0).trim());
+	}
+	
+	@Then("^Verify the response contains the correct error message when Invalid Style is provided$")
+	public void verifyErrorMsgWhenInValidStyleIsProvided() throws IOException {	
+		Assert.assertEquals("Invalid option style [ "+requestPojo.getStyle()+" ]. Valid option styles are: [AMERICAN, EUROPEAN]",response.getMessages().get(0).trim());
 	}
 	
 	@Given("^User has data having Exercise Start Date before Trade Date$")
@@ -134,6 +154,11 @@ public class ValidationsSteps {
 	@Given("^User has data with American Style and without Excercise Start Date$")
 	public void UserHasAmericanStyleWithoutExerciseStartDate() throws IOException {	
 	    jsonToPost = JsonUtils.getJsonToPost(new File(getJsonFilePath("Options")), ValidationData.getAmericanStyleWithoutStartExerciseDateData());	
+	}
+	
+	@Given("^User has data with European Style and with Excercise Start Date$")
+	public void UserHasEuropeanStyleWithExerciseStartDate() throws IOException {	
+	    requestPojo = mapper.readValue(JsonUtils.getJsonToPost(new File(getJsonFilePath("OptionsWithExerciseDate")), ValidationData.getEuropeanStyleWithStartExerciseDateData()),RequestPojo.class);	
 	}
 	
 	public String getJsonFilePath(String type) {

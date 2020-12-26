@@ -16,10 +16,39 @@ Feature: Options validations Feature
     Then Verify the response is valid
     
     @OptionsInValidData
+   Scenario: Verify error message when Expiry Date is after Delivery Date
+    Given User has data having Expiry Date after Delivery Date
+    When User posts the json request 
+    Then Verify the response contains the 'Expiry date | has to be before delivery date' error message
+    
+    @OptionsInValidData @Defect
+    #Delivery date value is coming wrong in validation error message
+   Scenario: Verify error message when Premium Date is after Delivery Date
+    Given User has data having Premium Date after Delivery Date
+    When User posts the json request 
+    Then Verify the response contains the 'Premium date | has to be before delivery date' error message
+    Then Verify the response contains the correct error message when Premium Date is after Delivery Date
+    
+    @OptionsInValidData @Defect1
     Scenario: Verify error message for Invalid Style
     Given User has Invalid Style in input
-    When User posts the json request 
+    When User posts the json request as object
     Then Verify the response contains the 'Invalid option style | Valid option styles are: [AMERICAN, EUROPEAN]' error message
+    Then Verify the response contains the correct error message when Invalid Style is provided
+    
+    #Defect : According to business requirement, exerciseStartDate should be present in request body for American Style but it is returning Success without it also.
+    @OptionsInValidData @Defect
+    Scenario: Verify error message when American Style is provided without Exercise Start Date
+    Given User has data with American Style and without Excercise Start Date
+    When User posts the json request
+    Then Verify the response status is 'ERROR'
+    
+    #Defect : According to business requirement, exerciseStartDate is for American Style Only and not for European Style but it is returning Success without it also.
+    @OptionsInValidData @Defect
+    Scenario: Verify error message when European Style is provided with Exercise Start Date
+    Given User has data with European Style and with Excercise Start Date
+    When User posts the json request as object
+    Then Verify the response status is 'ERROR'
     
     @OptionsInValidData @Defect
    Scenario: Verify error message when Exercise Start Date is before Trade Date
@@ -34,18 +63,6 @@ Feature: Options validations Feature
     When User posts the json request 
     Then Verify the response status is 'ERROR'
     Then Verify the response contains the 'Exercise start date | has to be before expiry date' error message
-    
-    @OptionsInValidData
-   Scenario: Verify error message when Expiry Date is after Delivery Date
-    Given User has data having Expiry Date after Delivery Date
-    When User posts the json request 
-    Then Verify the response contains the 'Expiry date | has to be before delivery date' error message
-    
-    @OptionsInValidData
-   Scenario: Verify error message when Premium Date is after Delivery Date
-    Given User has data having Premium Date after Delivery Date
-    When User posts the json request 
-    Then Verify the response contains the 'Premium date | has to be before delivery date' error message
     
     @OptionsInValidData
     Scenario: Verify error message when Invalid Customer is provided
@@ -63,12 +80,5 @@ Feature: Options validations Feature
     Scenario: Verify error message when Invalid ISO Currency is provided in ccy pair
     Given User has Invalid ISO Currency for product type 'Options'
    	When User posts the json request
-    Then Verify the response contains the 'Invalid currency pair' error message
+    Then Verify the response contains the 'Invalid currency pair' error message  
     
-    #Acc to requirement : American option style will have in addition the exerciseStartDate, which has to be after the trade date but before the expiry date
-    #Defect : According to business requirement, exerciseStartDate should be present in request body but it is returning Success without it also.
-    @OptionsInValidData @Defect1
-    Scenario: Verify error message when American Style is provided without Exercise Start Date
-    Given User has data with American Style and without Excercise Start Date
-    When User posts the json request
-    Then Verify the response status is 'ERROR'

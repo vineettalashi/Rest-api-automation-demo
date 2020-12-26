@@ -1,5 +1,6 @@
 package com.qe.vt.helper;
 
+import com.qe.vt.pojo.RequestPojo;
 import com.qe.vt.pojo.ResponsePojo;
 
 import io.restassured.response.Response;
@@ -16,9 +17,13 @@ public class RestApiController {
 	        return response;
 	    }
 
-	    public ResponsePojo executePostMethodWithRequestBody(String resource, String requestBody) {
+	    public ResponsePojo executePostMethodWithRequestBodyAsString(String resource, String requestBody) {
 	    	ResponsePojo response = restSpecBuilder.getRequestSpecification().body(requestBody).post(resource).as(ResponsePojo.class);
-	    	System.out.println(response);
+	        return response;
+	    }
+	    
+	    public ResponsePojo executePostMethodWithRequestBodyAsObject(String resource, RequestPojo requestBody) {
+	    	ResponsePojo response = restSpecBuilder.getRequestSpecification().body(requestBody).post(resource).as(ResponsePojo.class);
 	        return response;
 	    }
 

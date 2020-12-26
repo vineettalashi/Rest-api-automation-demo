@@ -55,6 +55,8 @@ public class JsonUtils {
         	obj.put("premiumType", pojo.getPremiumType());
         if(StringUtils.isNotBlank(pojo.getPremiumDate())) 
         	obj.put("premiumDate", pojo.getPremiumDate());
+        if(StringUtils.isNotBlank(pojo.getPayCcy())) 
+        	obj.put("payCcy", pojo.getPayCcy());
 
         return obj.toString();
     }

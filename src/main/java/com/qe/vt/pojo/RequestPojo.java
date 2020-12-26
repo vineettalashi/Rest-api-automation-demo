@@ -23,5 +23,6 @@ public class RequestPojo{
     private String premium;
     private String premiumCcy;
     private String premiumType;
-    private String premiumDate;   
+    private String premiumDate;
+    private String payCcy;
 }
