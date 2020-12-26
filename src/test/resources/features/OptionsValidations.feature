@@ -80,5 +80,11 @@ Feature: Options validations Feature
     Scenario: Verify error message when Invalid ISO Currency is provided in ccy pair
     Given User has Invalid ISO Currency for product type 'Options'
    	When User posts the json request
-    Then Verify the response contains the 'Invalid currency pair' error message  
+    Then Verify the response contains the 'Invalid currency pair' error message
+    
+    @OptionsInValidData @Defect
+    Scenario: Verify error message when Amount is provided as 0,PayCcy is null, Premium is 0.
+    Given User has amount1 and amount2 as zero , Premium is zero and PayCcy is empty in input data
+   	When User posts the json request as object
+    Then Verify the response status is 'ERROR' 
     

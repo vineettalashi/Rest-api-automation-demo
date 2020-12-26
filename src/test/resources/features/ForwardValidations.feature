@@ -23,6 +23,7 @@ Feature: Forward validations Feature
    	When User posts the json request
     Then Verify the response contains the 'is not supported. Supported counterparties: [[PLUTO2, PLUTO1]]' error message
     
+    @Defect
     Scenario: Verify error message when Invalid Legal Entity is provided. Requirement: It should accept only CS Zurich as LE. Defect: It is accepting any string as Legal Entity
     Given User has Invalid Legal entity for product type 'Forward'
    	When User posts the json request

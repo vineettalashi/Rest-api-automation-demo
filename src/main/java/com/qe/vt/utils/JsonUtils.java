@@ -15,9 +15,9 @@ public class JsonUtils {
         String JsonFileAsAString = FileUtils.readFileToString(file, "UTF-8");
         JSONObject obj = new JSONObject(JsonFileAsAString);
         
-        if(StringUtils.isNotBlank(pojo.getAmount1())) 
+        if(StringUtils.isNotBlank(String.valueOf(pojo.getAmount1())))
         	obj.put("amount1", pojo.getAmount1());
-        if(StringUtils.isNotBlank(pojo.getAmount2())) 
+        if(StringUtils.isNotBlank(String.valueOf(pojo.getAmount2())))
         	obj.put("amount2", pojo.getAmount2());
         if(StringUtils.isNotBlank(pojo.getTrader())) 
         	obj.put("trader", pojo.getTrader());
@@ -47,7 +47,7 @@ public class JsonUtils {
         	obj.put("deliveryDate", pojo.getDeliveryDate());
         if(StringUtils.isNotBlank(pojo.getExpiryDate())) 
         	obj.put("expiryDate", pojo.getExpiryDate());
-        if(StringUtils.isNotBlank(pojo.getPremium())) 
+        if(StringUtils.isNotBlank(String.valueOf(pojo.getPremium())))
         	obj.put("premium", pojo.getPremium());
         if(StringUtils.isNotBlank(pojo.getPremiumCcy())) 
         	obj.put("premiumCcy", pojo.getPremiumCcy());

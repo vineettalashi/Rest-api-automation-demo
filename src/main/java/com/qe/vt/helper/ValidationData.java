@@ -125,5 +125,14 @@ public class ValidationData {
 		pojo.setDeliveryDate(DateUtils.getWeekdayDateAhead(pojo.getPremiumDate()));
 		return pojo;
 	}
+	
+	public static RequestPojo getInvalidAmountsInvalidPayCcyInvalidPremium() {
+		RequestPojo pojo = new RequestPojo();
+		pojo.setAmount1(0);
+		pojo.setAmount2(0);
+		pojo.setPayCcy("");
+		pojo.setPremium(0);
+		return pojo;
+	}
 
 }

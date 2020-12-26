@@ -161,6 +161,11 @@ public class ValidationsSteps {
 	    requestPojo = mapper.readValue(JsonUtils.getJsonToPost(new File(getJsonFilePath("OptionsWithExerciseDate")), ValidationData.getEuropeanStyleWithStartExerciseDateData()),RequestPojo.class);	
 	}
 	
+	@Given("^User has amount1 and amount2 as zero , Premium is zero and PayCcy is empty in input data$")
+	public void UserHasInvalidAmountPayCcyPremium() throws IOException {	
+	    requestPojo = mapper.readValue(JsonUtils.getJsonToPost(new File(getJsonFilePath("OptionsWithExerciseDate")), ValidationData.getInvalidAmountsInvalidPayCcyInvalidPremium()),RequestPojo.class);	
+	}
+	
 	public String getJsonFilePath(String type) {
 		if(type.equalsIgnoreCase("Trade"))  return Constants.JSON_FILE_LOCATION_TRADE;
 		else if(type.equalsIgnoreCase("Spot")) return Constants.JSON_FILE_LOCATION_SPOT;

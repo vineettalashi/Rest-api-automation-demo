@@ -7,8 +7,8 @@ public class RequestPojo{
 	private String trader;
     private String type;
     private String customer;
-    private String amount1;
-    private String amount2;
+    private int amount1;
+    private int amount2;
     private String tradeDate;
     private String valueDate;
     private String rate;
@@ -20,7 +20,7 @@ public class RequestPojo{
     private String exerciseStartDate;
     private String deliveryDate;
     private String expiryDate;
-    private String premium;
+    private int premium;
     private String premiumCcy;
     private String premiumType;
     private String premiumDate;
