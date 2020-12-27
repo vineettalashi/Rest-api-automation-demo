@@ -39,7 +39,7 @@ public class DateUtils {
         }
     }
     
-    public static String getWeekdayDateAhead(String date) {
+    public static String getWeekdayDateAfter(String date) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(datePattern);
         localDate = LocalDate.parse(date, formatter);
         localDate = localDate.plus(2, ChronoUnit.DAYS);
@@ -52,7 +52,7 @@ public class DateUtils {
         }
     }
 
-    public static String getWeekDayDateBehind(String date) {
+    public static String getWeekDayDateBefore(String date) {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(datePattern);
         localDate = LocalDate.parse(date, formatter);
@@ -72,32 +72,6 @@ public class DateUtils {
         }
         return localDate.format(DateTimeFormatter.ofPattern(datePattern));
     }
-    
-    public static String getWeekendDateAhead(String date) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(datePattern);
-        localDate = LocalDate.parse(date, formatter);
-        localDate = localDate.plus(2, ChronoUnit.DAYS);
-        if (localDate.getDayOfWeek() == DayOfWeek.SATURDAY) {
-            return localDate.plus(2, ChronoUnit.DAYS).format(DateTimeFormatter.ofPattern(datePattern));
-        } else if (localDate.getDayOfWeek() == DayOfWeek.SUNDAY) {
-            return localDate.plus(1, ChronoUnit.DAYS).format(DateTimeFormatter.ofPattern(datePattern));
-        } else {
-            return localDate.toString();
-        }
-    }
-
-    public static String getWeekendDateBehind(String date) {
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(datePattern);
-        localDate = LocalDate.parse(date, formatter);
-        localDate = localDate.minus(2, ChronoUnit.DAYS);
-        if (localDate.getDayOfWeek() == DayOfWeek.SATURDAY) {
-            return localDate.plus(2, ChronoUnit.DAYS).format(DateTimeFormatter.ofPattern(datePattern));
-        } else if (localDate.getDayOfWeek() == DayOfWeek.SUNDAY) {
-            return localDate.plus(1, ChronoUnit.DAYS).format(DateTimeFormatter.ofPattern(datePattern));
-        } else {
-            return localDate.toString();
-        }
-    }
+ 
 
 }

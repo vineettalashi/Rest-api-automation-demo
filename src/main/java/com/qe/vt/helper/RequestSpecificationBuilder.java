@@ -1,8 +1,7 @@
 package com.qe.vt.helper;
 
-import javax.ws.rs.core.MediaType;
-
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 
 public class RequestSpecificationBuilder {
@@ -23,12 +22,12 @@ public class RequestSpecificationBuilder {
     }
 
     public RequestSpecificationBuilder setContentTypeJson() {
-        requestSpecification.contentType(MediaType.APPLICATION_JSON);
+        requestSpecification.contentType(ContentType.JSON);
         return this;
     }
 
     public RequestSpecificationBuilder setAcceptasJson() {
-        requestSpecification.accept(MediaType.APPLICATION_JSON);
+        requestSpecification.accept(ContentType.JSON);
         return this;
     }
 }

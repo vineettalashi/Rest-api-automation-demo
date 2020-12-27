@@ -27,7 +27,6 @@ public class PropertiesLoader {
         return instance;
     }
 
-    //Generic
     public String getValue(String propKey){
         return props.getProperty(propKey);
     }
@@ -42,10 +41,6 @@ public class PropertiesLoader {
 
     public  String getValidateBatchUrl(){
         return props.getProperty("resource.url.validateBatch");
-    }
-    
-    public  String getBatchApiEnabledStatus(){
-        return props.getProperty("batch");
     }
 
  }

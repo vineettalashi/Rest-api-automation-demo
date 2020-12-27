@@ -13,7 +13,7 @@ public class ValidationData {
 		RequestPojo pojo = new RequestPojo();
 		pojo.setTrader(TestDataProvider.getFullName());
 		pojo.setTradeDate(DateUtils.getWeekdayDate());
-		pojo.setValueDate(DateUtils.getWeekdayDateAhead(pojo.getTradeDate()));
+		pojo.setValueDate(DateUtils.getWeekdayDateAfter(pojo.getTradeDate()));
 		pojo.setCustomer(TestDataProvider.getValidCustomer());
 		pojo.setLegalEntity(TestDataProvider.getValidLegalEntity());
 		pojo.setCcyPair(TestDataProvider.getCurrencyCodePair());
@@ -62,7 +62,7 @@ public class ValidationData {
 		RequestPojo pojo = new RequestPojo();
 		pojo.setTrader(TestDataProvider.getFullName());
 		pojo.setTradeDate(DateUtils.getWeekdayDate());
-		pojo.setValueDate(DateUtils.getWeekDayDateBehind(pojo.getTradeDate()));
+		pojo.setValueDate(DateUtils.getWeekDayDateBefore(pojo.getTradeDate()));
 		pojo.setCustomer(TestDataProvider.getValidCustomer());
 		pojo.setLegalEntity(TestDataProvider.getValidLegalEntity());
 		pojo.setCcyPair(TestDataProvider.getCurrencyCodePair());
@@ -110,40 +110,40 @@ public class ValidationData {
 	public static RequestPojo getExpiryDateAfterDeliveryDateInvalidData() {
 		RequestPojo pojo = new RequestPojo();
 		pojo.setTradeDate(DateUtils.getWeekdayDate());
-		pojo.setExerciseStartDate(DateUtils.getWeekdayDateAhead(pojo.getTradeDate()));
-		pojo.setPremiumDate(DateUtils.getWeekdayDateAhead(pojo.getExerciseStartDate()));
-		pojo.setDeliveryDate(DateUtils.getWeekdayDateAhead(pojo.getPremiumDate()));
-		pojo.setExpiryDate(DateUtils.getWeekdayDateAhead(pojo.getDeliveryDate()));
+		pojo.setExerciseStartDate(DateUtils.getWeekdayDateAfter(pojo.getTradeDate()));
+		pojo.setPremiumDate(DateUtils.getWeekdayDateAfter(pojo.getExerciseStartDate()));
+		pojo.setDeliveryDate(DateUtils.getWeekdayDateAfter(pojo.getPremiumDate()));
+		pojo.setExpiryDate(DateUtils.getWeekdayDateAfter(pojo.getDeliveryDate()));
 		return pojo;
 	}
 	
 	public static RequestPojo getPremiumDateAfterDeliveryDateInvalidData() {
 		RequestPojo pojo = new RequestPojo();
 		pojo.setTradeDate(DateUtils.getWeekdayDate());
-		pojo.setExerciseStartDate(DateUtils.getWeekdayDateAhead(pojo.getTradeDate()));
-		pojo.setExpiryDate(DateUtils.getWeekdayDateAhead(pojo.getExerciseStartDate()));
-		pojo.setDeliveryDate(DateUtils.getWeekdayDateAhead(pojo.getExpiryDate()));
-		pojo.setPremiumDate(DateUtils.getWeekdayDateAhead(pojo.getDeliveryDate()));
+		pojo.setExerciseStartDate(DateUtils.getWeekdayDateAfter(pojo.getTradeDate()));
+		pojo.setExpiryDate(DateUtils.getWeekdayDateAfter(pojo.getExerciseStartDate()));
+		pojo.setDeliveryDate(DateUtils.getWeekdayDateAfter(pojo.getExpiryDate()));
+		pojo.setPremiumDate(DateUtils.getWeekdayDateAfter(pojo.getDeliveryDate()));
 		return pojo;
 	}
 	
 	public static RequestPojo getExerciseStartDateBeforeTradeDateInvalidData() {
 		RequestPojo pojo = new RequestPojo();
 		pojo.setExerciseStartDate(DateUtils.getWeekdayDate());
-		pojo.setTradeDate(DateUtils.getWeekdayDateAhead(pojo.getExerciseStartDate()));
-		pojo.setExpiryDate(DateUtils.getWeekdayDateAhead(pojo.getTradeDate()));
-		pojo.setPremiumDate(DateUtils.getWeekdayDateAhead(pojo.getExpiryDate()));
-		pojo.setDeliveryDate(DateUtils.getWeekdayDateAhead(pojo.getPremiumDate()));
+		pojo.setTradeDate(DateUtils.getWeekdayDateAfter(pojo.getExerciseStartDate()));
+		pojo.setExpiryDate(DateUtils.getWeekdayDateAfter(pojo.getTradeDate()));
+		pojo.setPremiumDate(DateUtils.getWeekdayDateAfter(pojo.getExpiryDate()));
+		pojo.setDeliveryDate(DateUtils.getWeekdayDateAfter(pojo.getPremiumDate()));
 		return pojo;
 	}
 	
 	public static RequestPojo getExerciseStartDateAfterExpiryDateInvalidData() {
 		RequestPojo pojo = new RequestPojo();
 		pojo.setTradeDate(DateUtils.getWeekdayDate());
-		pojo.setExpiryDate(DateUtils.getWeekdayDateAhead(pojo.getTradeDate()));
-		pojo.setExerciseStartDate(DateUtils.getWeekdayDateAhead(pojo.getExpiryDate()));
-		pojo.setPremiumDate(DateUtils.getWeekdayDateAhead(pojo.getExerciseStartDate()));
-		pojo.setDeliveryDate(DateUtils.getWeekdayDateAhead(pojo.getPremiumDate()));
+		pojo.setExpiryDate(DateUtils.getWeekdayDateAfter(pojo.getTradeDate()));
+		pojo.setExerciseStartDate(DateUtils.getWeekdayDateAfter(pojo.getExpiryDate()));
+		pojo.setPremiumDate(DateUtils.getWeekdayDateAfter(pojo.getExerciseStartDate()));
+		pojo.setDeliveryDate(DateUtils.getWeekdayDateAfter(pojo.getPremiumDate()));
 		return pojo;
 	}
 	

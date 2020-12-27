@@ -43,9 +43,6 @@ public class RestApiController {
 	    }
 	    
 	    public List<ResponsePojo> executePostMethodWithRequestBodyAsListOfObject(String resource, List<RequestPojo> requestBody) {
-	    	//List<ResponsePojo> listOfResponse = Arrays.asList(restSpecBuilder.getRequestSpecification().body(requestBody).post(resource).as(ResponsePojo[].class));
-	    	//List<ResponsePojo> listOfResponse = restSpecBuilder.getRequestSpecification().body(requestBody).post(resource).jsonPath().getList("", ResponsePojo.class);
-	      //  return listOfResponse;
 	        Response resp = restSpecBuilder.getRequestSpecification().body(requestBody).post(resource);
 	    	logger.info("Response"+resp.asPrettyString());
 	    	List<ResponsePojo> listOfResponse = Arrays.asList(resp.as(ResponsePojo[].class));

@@ -1,0 +1,2266 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>CS QE Task Report</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c43b89d03a7c43dae8bb8f0f078bad1997af6b3b/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report dark">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">CS QE Task Report</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Dec 27, 2020 03:28:50 AM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Dec 27, 2020 03:28:50 AM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Dec 27, 2020 03:28:56 AM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>2</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>4</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='33%'>
+<b>2</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='66%'><b>4</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='63%'><b>21</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='36%'><b>12</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='86%'><b>93</b> steps passed</small></div>
+<div>
+<small data-tooltip='11%'><b>12</b> steps failed,
+<b>2</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Forward validations Feature":4.089,"Invalid Product Type validations Feature":0.068,"Options validations Feature":0.491,"Spot Validations Feature":0.193,"Trade Validations Feature":0.046,"Batch API Validations Feature":0.125
+};
+</script>
+<div class="row">
+<div class="col-md-4 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@Defect</td>
+<td>0</td>
+<td>12</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@ForwardInValidData</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@ValidateBatchObject</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@ValidateBatch</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@SpotInvalidData</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@ForwardInvalidData</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@OptionsInValidData</td>
+<td>4</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>36.364%</td>
+</tr>
+<tr>
+<td>@SpotInValidData</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@OptionsValidData</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-md-4 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>version</td>
+<td>8.1</td>
+</tr>
+<tr>
+<td>AppName</td>
+<td>CSQETask</td>
+</tr>
+<tr>
+<td>os</td>
+<td>Windows</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 2,
+failParent: 4,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 21,
+failChild: 12,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 93,
+failGrandChild: 12,
+warningGrandChild: 0,
+skipGrandChild: 2,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@Defect</a><a class="dropdown-item" href="#">@ForwardInValidData</a><a class="dropdown-item" href="#">@ValidateBatchObject</a><a class="dropdown-item" href="#">@ValidateBatch</a><a class="dropdown-item" href="#">@SpotInvalidData</a><a class="dropdown-item" href="#">@ForwardInvalidData</a><a class="dropdown-item" href="#">@OptionsInValidData</a><a class="dropdown-item" href="#">@SpotInValidData</a><a class="dropdown-item" href="#">@OptionsValidData</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Forward validations Feature</p>
+            <p class="text-sm">
+              <span>03:28:51 AM</span> / <span>00:00:04:089</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Forward validations Feature</h5>
+<span class='badge badge-success'>12.27.2020 03:28:51</span>
+<span class='badge badge-danger'>12.27.2020 03:28:55</span>
+<span class='badge badge-default'>00:00:04:089</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+</div>
+<div class="m-t-10 m-l-5"> As a user
+I want to perform Forward Validations
+So that I acheive a business goal</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Verify the Validate endpoint for Valid Data</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasValidDataToPostPrdtType(java.lang.String)">
+                <span>Given User has valid data to post for 'Forward'</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheData()">
+                <span>When User posts the json request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.verifyResponse()">
+                <span>Then Verify the response is valid</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="6"><span class="badge log pass-bg mr-2">Pass</span>Verify error message when value date is before trade date</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInvalidValueDate(java.lang.String)">
+                <span>Given User has Value Date older than Trade Date for product type 'Forward'</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheDataAsObject()">
+                <span>When User posts the json request as object</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.verifyResponseContainsCorrectErrorMessageValueDateBeforeTradeDate()">
+                <span>Then Verify the response contains correct error message when value date is before trade date</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(java.lang.String)">
+                <span>Then Verify the response contains the 'cannot be null and it has to be after trade date' error message</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="11"><span class="badge log pass-bg mr-2">Pass</span>Verify error message when Invalid Customer is provided</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInvalidCustomerName(java.lang.String)">
+                <span>Given User has Invalid counterparty for product type 'Forward'</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheDataAsObject()">
+                <span>When User posts the json request as object</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.verifyResponseContainsCorrectErrorMessageForInvalidCounterparty()">
+                <span>Then Verify the response contains correct error message when Invalid Customer is provided</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(java.lang.String)">
+                <span>Then Verify the response contains the 'is not supported. Supported counterparties: [[PLUTO2, PLUTO1]]' error message</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="16"><span class="badge log pass-bg mr-2">Pass</span>Verify error message when when value date is on weekend</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasWeekendValueDate(java.lang.String)">
+                <span>Given User has the Value Date on weekend for product type 'Forward'</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheData()">
+                <span>When User posts the json request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(java.lang.String)">
+                <span>Then Verify the response contains the 'cannot fall on Saturday/Sunday' error message</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="20"><span class="badge log fail-bg mr-2">Fail</span>Defect: Verify error message when Invalid Legal Entity is provided. Requirement: It should accept only CS Zurich as LE. Defect: It is accepting any string as Legal Entity</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInvalidLE(java.lang.String)">
+                <span>Given User has Invalid Legal entity for product type 'Forward'</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheData()">
+                <span>When User posts the json request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(java.lang.String)">
+                <span>Then Verify the response contains the 'is not supported. Supported Legal entity: [CS Zurich]' error message</span>
+      <div>
+        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<[ERROR]> but was:<[SUCCESS]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(ValidationsSteps.java:157)
+	at ✽.Verify the response contains the 'is not supported. Supported Legal entity: [CS Zurich]' error message(classpath:features/validateApiTests/ForwardValidations.feature:34)
+</textarea>
+      
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="24"><span class="badge log pass-bg mr-2">Pass</span>Verify error message when Invalid ISO Currency is provided in ccy pair</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInvalidISOCurrency(java.lang.String)">
+                <span>Given User has Invalid ISO Currency for product type 'Forward'</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheData()">
+                <span>When User posts the json request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(java.lang.String)">
+                <span>Then Verify the response contains the 'Invalid currency pair' error message</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="28"><span class="badge log fail-bg mr-2">Fail</span>Defect: Verify error message when Amount is provided as 0,Trader is null, Rate is 0.</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInvalidAmountRateTrader(java.lang.String)">
+                <span>Given User has amount1 and amount2 as zero , Rate is zero and Trader is empty in input data for product type 'Forward'</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheDataAsObject()">
+                <span>When User posts the json request as object</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="com.qe.vt.steps.ValidationsSteps.verifyResponseStatus(java.lang.String)">
+                <span>Then Verify the response status is 'ERROR'</span>
+      <div>
+        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<[ERROR]> but was:<[SUCCESS]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at com.qe.vt.steps.ValidationsSteps.verifyResponseStatus(ValidationsSteps.java:148)
+	at ✽.Verify the response status is 'ERROR'(classpath:features/validateApiTests/ForwardValidations.feature:45)
+</textarea>
+      
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="32"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Invalid Product Type validations Feature</p>
+            <p class="text-sm">
+              <span>03:28:55 AM</span> / <span>00:00:00:068</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Invalid Product Type validations Feature</h5>
+<span class='badge badge-success'>12.27.2020 03:28:55</span>
+<span class='badge badge-danger'>12.27.2020 03:28:55</span>
+<span class='badge badge-default'>00:00:00:068</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=32</span>
+</div>
+<div class="m-t-10 m-l-5"> As a user
+I want to perform Trade Validations
+So that I acheive a business goal</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="33"><span class="badge log pass-bg mr-2">Pass</span>Verify error message when Invalid Product Type is provided.</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInvalidPrdtType()">
+                <span>Given User has Invalid Product Type in input</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheData()">
+                <span>When User posts the json request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(java.lang.String)">
+                <span>Then Verify the response contains the 'Could not resolve type id' error message</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="37"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Options validations Feature</p>
+            <p class="text-sm">
+              <span>03:28:55 AM</span> / <span>00:00:00:491</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Options validations Feature</h5>
+<span class='badge badge-success'>12.27.2020 03:28:55</span>
+<span class='badge badge-danger'>12.27.2020 03:28:56</span>
+<span class='badge badge-default'>00:00:00:491</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=37</span>
+</div>
+<div class="m-t-10 m-l-5"> As a user
+I want to perform Trade Validations
+So that I acheive a business goal</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="38"><span class="badge log pass-bg mr-2">Pass</span>Verify the Validate endpoint for Valid Data with EUROPEAN Style</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasValidDataToPostOptionsEuropean()">
+                <span>Given User has valid data to post for Options with European Style</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheData()">
+                <span>When User posts the json request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.verifyResponse()">
+                <span>Then Verify the response is valid</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="42"><span class="badge log pass-bg mr-2">Pass</span>Verify the Validate endpoint for Valid Data with AMERICAN Style</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasValidDataToPostOptionsAmerican()">
+                <span>Given User has valid data to post for Options with American Style</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheData()">
+                <span>When User posts the json request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.verifyResponse()">
+                <span>Then Verify the response is valid</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="46"><span class="badge log pass-bg mr-2">Pass</span>Verify error message when Expiry Date is after Delivery Date</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInValidDataExpiryDateAfterDeliveryDate()">
+                <span>Given User has data having Expiry Date after Delivery Date</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheData()">
+                <span>When User posts the json request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(java.lang.String)">
+                <span>Then Verify the response contains the 'Expiry date | has to be before delivery date' error message</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="50"><span class="badge log fail-bg mr-2">Fail</span>Defect: Verify error message when Premium Date is after Delivery Date</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInValidDataPremiumDateAfterDeliveryDate()">
+                <span>Given User has data having Premium Date after Delivery Date</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheData()">
+                <span>When User posts the json request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(java.lang.String)">
+                <span>Then Verify the response contains the 'Premium date | has to be before delivery date' error message</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="com.qe.vt.steps.ValidationsSteps.verifyErrorMsgWhenInValidDataPremiumDateAfterDeliveryDate()">
+                <span>Then Verify the response contains the correct error message when Premium Date is after Delivery Date</span>
+      <div>
+        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<...livery date 2021-01-[20]> but was:<...livery date 2021-01-[13]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at com.qe.vt.steps.ValidationsSteps.verifyErrorMsgWhenInValidDataPremiumDateAfterDeliveryDate(ValidationsSteps.java:226)
+	at ✽.Verify the response contains the correct error message when Premium Date is after Delivery Date(classpath:features/validateApiTests/OptionsValidations.feature:30)
+</textarea>
+      
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="55"><span class="badge log pass-bg mr-2">Pass</span>Verify error message for Invalid Style</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInvalidStyle()">
+                <span>Given User has Invalid Style in input</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheDataAsObject()">
+                <span>When User posts the json request as object</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(java.lang.String)">
+                <span>Then Verify the response contains the 'Invalid option style | Valid option styles are: [AMERICAN, EUROPEAN]' error message</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.verifyErrorMsgWhenInValidStyleIsProvided()">
+                <span>Then Verify the response contains the correct error message when Invalid Style is provided</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="60"><span class="badge log fail-bg mr-2">Fail</span>Defect: Verify error message when American Style is provided without Exercise Start Date</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasAmericanStyleWithoutExerciseStartDate()">
+                <span>Given User has data with American Style and without Excercise Start Date</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheData()">
+                <span>When User posts the json request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="com.qe.vt.steps.ValidationsSteps.verifyResponseStatus(java.lang.String)">
+                <span>Then Verify the response status is 'ERROR'</span>
+      <div>
+        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<[ERROR]> but was:<[SUCCESS]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at com.qe.vt.steps.ValidationsSteps.verifyResponseStatus(ValidationsSteps.java:148)
+	at ✽.Verify the response status is 'ERROR'(classpath:features/validateApiTests/OptionsValidations.feature:44)
+</textarea>
+      
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="64"><span class="badge log fail-bg mr-2">Fail</span>Defect: Verify error message when European Style is provided with Exercise Start Date</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasEuropeanStyleWithExerciseStartDate()">
+                <span>Given User has data with European Style and with Excercise Start Date</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheDataAsObject()">
+                <span>When User posts the json request as object</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="com.qe.vt.steps.ValidationsSteps.verifyResponseStatus(java.lang.String)">
+                <span>Then Verify the response status is 'ERROR'</span>
+      <div>
+        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<[ERROR]> but was:<[SUCCESS]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at com.qe.vt.steps.ValidationsSteps.verifyResponseStatus(ValidationsSteps.java:148)
+	at ✽.Verify the response status is 'ERROR'(classpath:features/validateApiTests/OptionsValidations.feature:51)
+</textarea>
+      
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="68"><span class="badge log fail-bg mr-2">Fail</span>Defect: Verify error message when Exercise Start Date is before Trade Date</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInValidDataExerciseStartDateBeforeTradeDate()">
+                <span>Given User has data having Exercise Start Date before Trade Date</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheData()">
+                <span>When User posts the json request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="com.qe.vt.steps.ValidationsSteps.verifyResponseStatus(java.lang.String)">
+                <span>Then Verify the response status is 'ERROR'</span>
+      <div>
+        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<[ERROR]> but was:<[SUCCESS]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at com.qe.vt.steps.ValidationsSteps.verifyResponseStatus(ValidationsSteps.java:148)
+	at ✽.Verify the response status is 'ERROR'(classpath:features/validateApiTests/OptionsValidations.feature:57)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(java.lang.String)">
+                <span>Then Verify the response contains the 'Trade date | has to be before exercise start date' error message</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="73"><span class="badge log fail-bg mr-2">Fail</span>Defect: Verify error message when Exercise Start Date is after Expiry Date</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInValidDataExerciseStartDateAfterExpiryDate()">
+                <span>Given User has data having Exercise Start Date after Expiry Date</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheData()">
+                <span>When User posts the json request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="com.qe.vt.steps.ValidationsSteps.verifyResponseStatus(java.lang.String)">
+                <span>Then Verify the response status is 'ERROR'</span>
+      <div>
+        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<[ERROR]> but was:<[SUCCESS]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at com.qe.vt.steps.ValidationsSteps.verifyResponseStatus(ValidationsSteps.java:148)
+	at ✽.Verify the response status is 'ERROR'(classpath:features/validateApiTests/OptionsValidations.feature:64)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(java.lang.String)">
+                <span>Then Verify the response contains the 'Exercise start date | has to be before expiry date' error message</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="78"><span class="badge log pass-bg mr-2">Pass</span>Verify error message when Invalid Customer is provided</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInvalidCustomerName(java.lang.String)">
+                <span>Given User has Invalid counterparty for product type 'Options'</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheDataAsObject()">
+                <span>When User posts the json request as object</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(java.lang.String)">
+                <span>Then Verify the response contains the 'is not supported. Supported counterparties: [[PLUTO2, PLUTO1]]' error message</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="82"><span class="badge log fail-bg mr-2">Fail</span>Defect: Verify error message when Invalid Legal Entity is provided. Requirement: It should accept only CS Zurich as LE. Defect: It is accepting any string as Legal Entity</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInvalidLE(java.lang.String)">
+                <span>Given User has Invalid Legal entity for product type 'Options'</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheData()">
+                <span>When User posts the json request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(java.lang.String)">
+                <span>Then Verify the response contains the 'is not supported. Supported Legal entity: [CS Zurich]' error message</span>
+      <div>
+        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<[ERROR]> but was:<[SUCCESS]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(ValidationsSteps.java:157)
+	at ✽.Verify the response contains the 'is not supported. Supported Legal entity: [CS Zurich]' error message(classpath:features/validateApiTests/OptionsValidations.feature:77)
+</textarea>
+      
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="86"><span class="badge log pass-bg mr-2">Pass</span>Verify error message when Invalid ISO Currency is provided in ccy pair</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInvalidISOCurrency(java.lang.String)">
+                <span>Given User has Invalid ISO Currency for product type 'Options'</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheData()">
+                <span>When User posts the json request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(java.lang.String)">
+                <span>Then Verify the response contains the 'Invalid currency pair' error message</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="90"><span class="badge log fail-bg mr-2">Fail</span>Defect: Verify error message when Amount is provided as 0,PayCcy is null, Premium is 0.</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInvalidAmountPayCcyPremium()">
+                <span>Given User has amount1 and amount2 as zero , Premium is zero and PayCcy is empty in input data</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheDataAsObject()">
+                <span>When User posts the json request as object</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="com.qe.vt.steps.ValidationsSteps.verifyResponseStatus(java.lang.String)">
+                <span>Then Verify the response status is 'ERROR'</span>
+      <div>
+        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<[ERROR]> but was:<[SUCCESS]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at com.qe.vt.steps.ValidationsSteps.verifyResponseStatus(ValidationsSteps.java:148)
+	at ✽.Verify the response status is 'ERROR'(classpath:features/validateApiTests/OptionsValidations.feature:89)
+</textarea>
+      
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="94"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Spot Validations Feature</p>
+            <p class="text-sm">
+              <span>03:28:56 AM</span> / <span>00:00:00:193</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Spot Validations Feature</h5>
+<span class='badge badge-success'>12.27.2020 03:28:56</span>
+<span class='badge badge-danger'>12.27.2020 03:28:56</span>
+<span class='badge badge-default'>00:00:00:193</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=94</span>
+</div>
+<div class="m-t-10 m-l-5"> As a user
+I want to perform Spot Validations
+So that I acheive a business goal</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="95"><span class="badge log pass-bg mr-2">Pass</span>Verify the Validate endpoint for Valid Data</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasValidDataToPostPrdtType(java.lang.String)">
+                <span>Given User has valid data to post for 'Spot'</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheData()">
+                <span>When User posts the json request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.verifyResponse()">
+                <span>Then Verify the response is valid</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="99"><span class="badge log pass-bg mr-2">Pass</span>Verify error message when value date is before trade date</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInvalidValueDate(java.lang.String)">
+                <span>Given User has Value Date older than Trade Date for product type 'Spot'</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheDataAsObject()">
+                <span>When User posts the json request as object</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.verifyResponseContainsCorrectErrorMessageValueDateBeforeTradeDate()">
+                <span>Then Verify the response contains correct error message when value date is before trade date</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(java.lang.String)">
+                <span>Then Verify the response contains the 'cannot be null and it has to be after trade date' error message</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="104"><span class="badge log pass-bg mr-2">Pass</span>Verify error message when Invalid Customer is provided</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInvalidCustomerName(java.lang.String)">
+                <span>Given User has Invalid counterparty for product type 'Spot'</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheDataAsObject()">
+                <span>When User posts the json request as object</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.verifyResponseContainsCorrectErrorMessageForInvalidCounterparty()">
+                <span>Then Verify the response contains correct error message when Invalid Customer is provided</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(java.lang.String)">
+                <span>Then Verify the response contains the 'is not supported. Supported counterparties: [[PLUTO2, PLUTO1]]' error message</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="109"><span class="badge log pass-bg mr-2">Pass</span>Verify error message when when value date is on weekend</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasWeekendValueDate(java.lang.String)">
+                <span>Given User has the Value Date on weekend for product type 'Spot'</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheData()">
+                <span>When User posts the json request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(java.lang.String)">
+                <span>Then Verify the response contains the 'cannot fall on Saturday/Sunday' error message</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="113"><span class="badge log fail-bg mr-2">Fail</span>Defect: Verify error message when Invalid Legal Entity is provided. Requirement: It should accept only CS Zurich as LE. Defect: It is accepting any string as Legal Entity</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInvalidLE(java.lang.String)">
+                <span>Given User has Invalid Legal entity for product type 'Spot'</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheData()">
+                <span>When User posts the json request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(java.lang.String)">
+                <span>Then Verify the response contains the 'is not supported. Supported Legal entity: [CS Zurich]' error message</span>
+      <div>
+        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<[ERROR]> but was:<[SUCCESS]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(ValidationsSteps.java:157)
+	at ✽.Verify the response contains the 'is not supported. Supported Legal entity: [CS Zurich]' error message(classpath:features/validateApiTests/SpotValidations.feature:34)
+</textarea>
+      
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="117"><span class="badge log pass-bg mr-2">Pass</span>Verify error message when Invalid ISO Currency is provided in ccy pair</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInvalidISOCurrency(java.lang.String)">
+                <span>Given User has Invalid ISO Currency for product type 'Forward'</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheData()">
+                <span>When User posts the json request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.responseContainsTheRequiredErrorMessage(java.lang.String)">
+                <span>Then Verify the response contains the 'Invalid currency pair' error message</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="121"><span class="badge log fail-bg mr-2">Fail</span>Defect: Verify error message when Amount is provided as 0, Trader is null, Rate is 0.</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInvalidAmountRateTrader(java.lang.String)">
+                <span>Given User has amount1 and amount2 as zero , Rate is zero and Trader is empty in input data for product type 'Spot'</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheDataAsObject()">
+                <span>When User posts the json request as object</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="com.qe.vt.steps.ValidationsSteps.verifyResponseStatus(java.lang.String)">
+                <span>Then Verify the response status is 'ERROR'</span>
+      <div>
+        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<[ERROR]> but was:<[SUCCESS]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at com.qe.vt.steps.ValidationsSteps.verifyResponseStatus(ValidationsSteps.java:148)
+	at ✽.Verify the response status is 'ERROR'(classpath:features/validateApiTests/SpotValidations.feature:45)
+</textarea>
+      
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="125"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Trade Validations Feature</p>
+            <p class="text-sm">
+              <span>03:28:56 AM</span> / <span>00:00:00:046</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Trade Validations Feature</h5>
+<span class='badge badge-success'>12.27.2020 03:28:56</span>
+<span class='badge badge-danger'>12.27.2020 03:28:56</span>
+<span class='badge badge-default'>00:00:00:046</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=125</span>
+</div>
+<div class="m-t-10 m-l-5"> As a user
+I want to perform Trade Validations
+So that I acheive a business goal</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="126"><span class="badge log fail-bg mr-2">Fail</span>Defect: Verify the Validate endpoint for Valid Data. Exception is coming for Product Type Trade after hitting the post request for all Valid Data</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasValidDataToPostPrdtType(java.lang.String)">
+                <span>Given User has valid data to post for 'Trade'</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheData()">
+                <span>When User posts the json request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="com.qe.vt.steps.ValidationsSteps.verifyResponse()">
+                <span>Then Verify the response is valid</span>
+      <div>
+        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<[SUCCESS]> but was:<[500]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at com.qe.vt.steps.ValidationsSteps.verifyResponse(ValidationsSteps.java:127)
+	at ✽.Verify the response is valid(classpath:features/validateApiTests/TradeValidations.feature:11)
+</textarea>
+      
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="130"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Batch API Validations Feature</p>
+            <p class="text-sm">
+              <span>03:28:56 AM</span> / <span>00:00:00:125</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Batch API Validations Feature</h5>
+<span class='badge badge-success'>12.27.2020 03:28:56</span>
+<span class='badge badge-danger'>12.27.2020 03:28:56</span>
+<span class='badge badge-default'>00:00:00:125</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=130</span>
+</div>
+<div class="m-t-10 m-l-5"> As a user
+I want to perform Batch Api Validations
+So that I acheive a business goal</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="131"><span class="badge log pass-bg mr-2">Pass</span>Verify the Validate Batch endpoint for Valid Data with request as String</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasValidDataToPostBatchApiRequst()">
+                <span>Given User has valid data to post for validateBatch api</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheDataForBatchAsString()">
+                <span>When User posts the json request for validate batch api as string</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.verifyBatchResponse()">
+                <span>Then Verify the batch response is valid</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="135"><span class="badge log pass-bg mr-2">Pass</span>Verify the Validate Batch endpoint for Invalid Data with request as String</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInvalidDataToPostBatchApiRequst()">
+                <span>Given User has invalid data to post for validateBatch api</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheDataForBatchAsString()">
+                <span>When User posts the json request for validate batch api as string</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.verifyBatchResponseMix(java.lang.String)">
+                <span>Then Verify the batch response status is 'ERROR'</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="139"><span class="badge log pass-bg mr-2">Pass</span>Verify the Validate Batch endpoint for Valid Data with request as Object</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasValidDataToPostBatchApiRequst()">
+                <span>Given User has valid data to post for validateBatch api</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheDataForBatchAsObject()">
+                <span>When User posts the json request for validate batch api as object</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.verifyBatchResponse()">
+                <span>Then Verify the batch response is valid</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="143"><span class="badge log pass-bg mr-2">Pass</span>Verify the Validate Batch endpoint for Invalid Data with request as Object</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserHasInvalidDataToPostBatchApiRequst()">
+                <span>Given User has invalid data to post for validateBatch api</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.UserPostTheDataForBatchAsObject()">
+                <span>When User posts the json request for validate batch api as object</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qe.vt.steps.ValidationsSteps.verifyBatchResponseMix(java.lang.String)">
+                <span>Then Verify the batch response status is 'ERROR'</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">9</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>12</span>
+</span>
+<p class="name">@Defect</p>
+<p class="duration text-sm">12 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Defect</h4>
+<span status="fail" class='badge log badge-danger'>12 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:55 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='20'>Defect: Verify error message when Invalid Legal Entity is provided. Requirement: It should accept only CS Zurich as LE. Defect: It is accepting any string as Legal Entity</a>
+<div class="">
+<span class="badge badge-default">Forward validations Feature.Defect: Verify error message when Invalid Legal Entity is provided. Requirement: It should accept only CS Zurich as LE. Defect: It is accepting any string as Legal Entity</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:55 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='28'>Defect: Verify error message when Amount is provided as 0,Trader is null, Rate is 0.</a>
+<div class="">
+<span class="badge badge-default">Forward validations Feature.Defect: Verify error message when Amount is provided as 0,Trader is null, Rate is 0.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='50'>Defect: Verify error message when Premium Date is after Delivery Date</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when Premium Date is after Delivery Date</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='60'>Defect: Verify error message when American Style is provided without Exercise Start Date</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when American Style is provided without Exercise Start Date</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='64'>Defect: Verify error message when European Style is provided with Exercise Start Date</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when European Style is provided with Exercise Start Date</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='68'>Defect: Verify error message when Exercise Start Date is before Trade Date</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when Exercise Start Date is before Trade Date</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='73'>Defect: Verify error message when Exercise Start Date is after Expiry Date</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when Exercise Start Date is after Expiry Date</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='82'>Defect: Verify error message when Invalid Legal Entity is provided. Requirement: It should accept only CS Zurich as LE. Defect: It is accepting any string as Legal Entity</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when Invalid Legal Entity is provided. Requirement: It should accept only CS Zurich as LE. Defect: It is accepting any string as Legal Entity</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='90'>Defect: Verify error message when Amount is provided as 0,PayCcy is null, Premium is 0.</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when Amount is provided as 0,PayCcy is null, Premium is 0.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='94' id='113'>Defect: Verify error message when Invalid Legal Entity is provided. Requirement: It should accept only CS Zurich as LE. Defect: It is accepting any string as Legal Entity</a>
+<div class="">
+<span class="badge badge-default">Spot Validations Feature.Defect: Verify error message when Invalid Legal Entity is provided. Requirement: It should accept only CS Zurich as LE. Defect: It is accepting any string as Legal Entity</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='94' id='121'>Defect: Verify error message when Amount is provided as 0, Trader is null, Rate is 0.</a>
+<div class="">
+<span class="badge badge-default">Spot Validations Feature.Defect: Verify error message when Amount is provided as 0, Trader is null, Rate is 0.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='126'>Defect: Verify the Validate endpoint for Valid Data. Exception is coming for Product Type Trade after hitting the post request for all Valid Data</a>
+<div class="">
+<span class="badge badge-default">Trade Validations Feature.Defect: Verify the Validate endpoint for Valid Data. Exception is coming for Product Type Trade after hitting the post request for all Valid Data</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@ForwardInValidData</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@ForwardInValidData</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:55 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='28'>Defect: Verify error message when Amount is provided as 0,Trader is null, Rate is 0.</a>
+<div class="">
+<span class="badge badge-default">Forward validations Feature.Defect: Verify error message when Amount is provided as 0,Trader is null, Rate is 0.</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@ValidateBatchObject</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@ValidateBatchObject</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='130' id='139'>Verify the Validate Batch endpoint for Valid Data with request as Object</a>
+<div class="">
+<span class="badge badge-default">Batch API Validations Feature.Verify the Validate Batch endpoint for Valid Data with request as Object</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='130' id='143'>Verify the Validate Batch endpoint for Invalid Data with request as Object</a>
+<div class="">
+<span class="badge badge-default">Batch API Validations Feature.Verify the Validate Batch endpoint for Invalid Data with request as Object</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@ValidateBatch</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@ValidateBatch</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='130' id='131'>Verify the Validate Batch endpoint for Valid Data with request as String</a>
+<div class="">
+<span class="badge badge-default">Batch API Validations Feature.Verify the Validate Batch endpoint for Valid Data with request as String</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='130' id='135'>Verify the Validate Batch endpoint for Invalid Data with request as String</a>
+<div class="">
+<span class="badge badge-default">Batch API Validations Feature.Verify the Validate Batch endpoint for Invalid Data with request as String</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@SpotInvalidData</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@SpotInvalidData</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='94' id='99'>Verify error message when value date is before trade date</a>
+<div class="">
+<span class="badge badge-default">Spot Validations Feature.Verify error message when value date is before trade date</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='94' id='104'>Verify error message when Invalid Customer is provided</a>
+<div class="">
+<span class="badge badge-default">Spot Validations Feature.Verify error message when Invalid Customer is provided</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@ForwardInvalidData</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@ForwardInvalidData</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>03:28:54 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='6'>Verify error message when value date is before trade date</a>
+<div class="">
+<span class="badge badge-default">Forward validations Feature.Verify error message when value date is before trade date</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>03:28:55 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='11'>Verify error message when Invalid Customer is provided</a>
+<div class="">
+<span class="badge badge-default">Forward validations Feature.Verify error message when Invalid Customer is provided</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>4</span>
+<span class='badge log badge-danger'>7</span>
+</span>
+<p class="name">@OptionsInValidData</p>
+<p class="duration text-sm">11 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@OptionsInValidData</h4>
+<span status="pass" class='badge log pass-bg'>4 passed</span>
+<span status="fail" class='badge log badge-danger'>7 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='46'>Verify error message when Expiry Date is after Delivery Date</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Verify error message when Expiry Date is after Delivery Date</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='50'>Defect: Verify error message when Premium Date is after Delivery Date</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when Premium Date is after Delivery Date</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='55'>Verify error message for Invalid Style</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Verify error message for Invalid Style</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='60'>Defect: Verify error message when American Style is provided without Exercise Start Date</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when American Style is provided without Exercise Start Date</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='64'>Defect: Verify error message when European Style is provided with Exercise Start Date</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when European Style is provided with Exercise Start Date</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='68'>Defect: Verify error message when Exercise Start Date is before Trade Date</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when Exercise Start Date is before Trade Date</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='73'>Defect: Verify error message when Exercise Start Date is after Expiry Date</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when Exercise Start Date is after Expiry Date</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='78'>Verify error message when Invalid Customer is provided</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Verify error message when Invalid Customer is provided</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='82'>Defect: Verify error message when Invalid Legal Entity is provided. Requirement: It should accept only CS Zurich as LE. Defect: It is accepting any string as Legal Entity</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when Invalid Legal Entity is provided. Requirement: It should accept only CS Zurich as LE. Defect: It is accepting any string as Legal Entity</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='86'>Verify error message when Invalid ISO Currency is provided in ccy pair</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Verify error message when Invalid ISO Currency is provided in ccy pair</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='90'>Defect: Verify error message when Amount is provided as 0,PayCcy is null, Premium is 0.</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when Amount is provided as 0,PayCcy is null, Premium is 0.</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@SpotInValidData</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@SpotInValidData</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='94' id='121'>Defect: Verify error message when Amount is provided as 0, Trader is null, Rate is 0.</a>
+<div class="">
+<span class="badge badge-default">Spot Validations Feature.Defect: Verify error message when Amount is provided as 0, Trader is null, Rate is 0.</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@OptionsValidData</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@OptionsValidData</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>03:28:55 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='38'>Verify the Validate endpoint for Valid Data with EUROPEAN Style</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Verify the Validate endpoint for Valid Data with EUROPEAN Style</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='42'>Verify the Validate endpoint for Valid Data with AMERICAN Style</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Verify the Validate endpoint for Valid Data with AMERICAN Style</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.junit.ComparisonFailure</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.junit.ComparisonFailure</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:55 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='23'>Then Verify the response contains the 'is not supported. Supported Legal entity: [CS Zurich]' error message</a>
+<div class="">
+<span class="badge badge-default">Forward validations Feature.Defect: Verify error message when Invalid Legal Entity is provided. Requirement: It should accept only CS Zurich as LE. Defect: It is accepting any string as Legal Entity.Then Verify the response contains the 'is not supported. Supported Legal entity: [CS Zurich]' error message</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:55 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='31'>Then Verify the response status is 'ERROR'</a>
+<div class="">
+<span class="badge badge-default">Forward validations Feature.Defect: Verify error message when Amount is provided as 0,Trader is null, Rate is 0..Then Verify the response status is 'ERROR'</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='54'>Then Verify the response contains the correct error message when Premium Date is after Delivery Date</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when Premium Date is after Delivery Date.Then Verify the response contains the correct error message when Premium Date is after Delivery Date</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='63'>Then Verify the response status is 'ERROR'</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when American Style is provided without Exercise Start Date.Then Verify the response status is 'ERROR'</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='67'>Then Verify the response status is 'ERROR'</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when European Style is provided with Exercise Start Date.Then Verify the response status is 'ERROR'</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='71'>Then Verify the response status is 'ERROR'</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when Exercise Start Date is before Trade Date.Then Verify the response status is 'ERROR'</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='76'>Then Verify the response status is 'ERROR'</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when Exercise Start Date is after Expiry Date.Then Verify the response status is 'ERROR'</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='85'>Then Verify the response contains the 'is not supported. Supported Legal entity: [CS Zurich]' error message</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when Invalid Legal Entity is provided. Requirement: It should accept only CS Zurich as LE. Defect: It is accepting any string as Legal Entity.Then Verify the response contains the 'is not supported. Supported Legal entity: [CS Zurich]' error message</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='93'>Then Verify the response status is 'ERROR'</a>
+<div class="">
+<span class="badge badge-default">Options validations Feature.Defect: Verify error message when Amount is provided as 0,PayCcy is null, Premium is 0..Then Verify the response status is 'ERROR'</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='94' id='116'>Then Verify the response contains the 'is not supported. Supported Legal entity: [CS Zurich]' error message</a>
+<div class="">
+<span class="badge badge-default">Spot Validations Feature.Defect: Verify error message when Invalid Legal Entity is provided. Requirement: It should accept only CS Zurich as LE. Defect: It is accepting any string as Legal Entity.Then Verify the response contains the 'is not supported. Supported Legal entity: [CS Zurich]' error message</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='94' id='124'>Then Verify the response status is 'ERROR'</a>
+<div class="">
+<span class="badge badge-default">Spot Validations Feature.Defect: Verify error message when Amount is provided as 0, Trader is null, Rate is 0..Then Verify the response status is 'ERROR'</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>03:28:56 AM</td>
+<td>
+<a href="#" class="linked" test-id='125' id='129'>Then Verify the response is valid</a>
+<div class="">
+<span class="badge badge-default">Trade Validations Feature.Defect: Verify the Validate endpoint for Valid Data. Exception is coming for Product Type Trade after hitting the post request for all Valid Data.Then Verify the response is valid</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@14e9bb345ef7e2ed3a102f271d84e9f0267c88e7/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
