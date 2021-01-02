@@ -1,23 +1,40 @@
-package com.qe.vt.helper;
+package com.qe.vt.dataprovider;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+
+import org.json.JSONObject;
 
 import com.qe.vt.pojo.RequestPojo;
 import com.qe.vt.utils.DateUtils;
-import com.qe.vt.utils.TestDataProvider;
 
 public class ValidationData {
 	
-	public static RequestPojo getValidDataForTradeSpotForward() {
-		RequestPojo pojo = new RequestPojo();
-		pojo.setTrader(TestDataProvider.getFullName());
-		pojo.setTradeDate(DateUtils.getWeekdayDate());
-		pojo.setValueDate(DateUtils.getWeekdayDateAfter(pojo.getTradeDate()));
-		pojo.setCustomer(TestDataProvider.getValidCustomer());
-		pojo.setLegalEntity(TestDataProvider.getValidLegalEntity());
-		pojo.setCcyPair(TestDataProvider.getCurrencyCodePair());
-		return pojo;
+	private static Map<String,RequestPojo> invalidDataMap = new HashMap<>();	
+
+	public static Map<String,RequestPojo> getMapOfProductTypeAndInvalidData() {
+		invalidDataMap.put("Spot", getInvalidCounterpartyData());
+		invalidDataMap.put("Forward", getInvalidCurrencyPairData());
+		invalidDataMap.put("VanillaOptionAmer", getExpiryDateAfterDeliveryDateInvalidData());
+		invalidDataMap.put("VanillaOptionEuro", getInvalidStyleData());
+		return invalidDataMap;
+	}
+	
+	public static RequestPojo getInvalidDataForBatchApi(JSONObject obj) {
+		String type=obj.getString("type");
+		
+		if(type.contains("Vanilla")) {
+			String style=obj.getString("style");
+			if(style.contains("AMERICAN"))
+				return getMapOfProductTypeAndInvalidData().get("VanillaOptionAmer");
+			else if(style.contains("EUROPEAN"))
+				return getMapOfProductTypeAndInvalidData().get("VanillaOptionEuro");
+		}
+		else return getMapOfProductTypeAndInvalidData().get(type);
+		
+		return null;
 	}
 	
 	public static List<RequestPojo> getValidDataForBatchApi() {
@@ -27,6 +44,17 @@ public class ValidationData {
 		listOfPojo.add(new RequestPojo());
 		listOfPojo.add(new RequestPojo());
 		return listOfPojo;
+	}
+	
+	public static RequestPojo getValidDataForTradeSpotForward() {
+		RequestPojo pojo = new RequestPojo();
+		pojo.setTrader(TestDataGenerator.getFullName());
+		pojo.setTradeDate(DateUtils.getWeekdayDate());
+		pojo.setValueDate(DateUtils.getWeekdayDateAfter(pojo.getTradeDate()));
+		pojo.setCustomer(TestDataGenerator.getValidCustomer());
+		pojo.setLegalEntity(TestDataGenerator.getValidLegalEntity());
+		pojo.setCcyPair(TestDataGenerator.getCurrencyCodePair());
+		return pojo;
 	}
 	
 	public static List<RequestPojo> getInvalidDataForBatchApi() {
@@ -40,13 +68,13 @@ public class ValidationData {
 	
 	public static RequestPojo getValidDataForOptionsWithEuropeanStyle() {
 		RequestPojo pojo = new RequestPojo();
-		pojo.setStyle(TestDataProvider.getStyleAsEuropean());
+		pojo.setStyle(TestDataGenerator.getStyleAsEuropean());
 		return pojo;
 	}
 	
 	public static RequestPojo getValidDataForOptionsWithAmericanStyle() {
 		RequestPojo pojo = new RequestPojo();
-		pojo.setStyle(TestDataProvider.getStyleAsAmerican());
+		pojo.setStyle(TestDataGenerator.getStyleAsAmerican());
 		return pojo;
 	}
 	
@@ -60,12 +88,12 @@ public class ValidationData {
 	
 	public static RequestPojo getValueDateOlderThanTradeDateData() {
 		RequestPojo pojo = new RequestPojo();
-		pojo.setTrader(TestDataProvider.getFullName());
+		pojo.setTrader(TestDataGenerator.getFullName());
 		pojo.setTradeDate(DateUtils.getWeekdayDate());
 		pojo.setValueDate(DateUtils.getWeekDayDateBefore(pojo.getTradeDate()));
-		pojo.setCustomer(TestDataProvider.getValidCustomer());
-		pojo.setLegalEntity(TestDataProvider.getValidLegalEntity());
-		pojo.setCcyPair(TestDataProvider.getCurrencyCodePair());
+		pojo.setCustomer(TestDataGenerator.getValidCustomer());
+		pojo.setLegalEntity(TestDataGenerator.getValidLegalEntity());
+		pojo.setCcyPair(TestDataGenerator.getCurrencyCodePair());
 		return pojo;
 	}
 	
@@ -79,31 +107,31 @@ public class ValidationData {
 	
 	public static RequestPojo getInvalidCounterpartyData() {
 		RequestPojo pojo = new RequestPojo();
-		pojo.setCustomer(TestDataProvider.getInvalidCustomer());
+		pojo.setCustomer(TestDataGenerator.getInvalidCustomer());
 		return pojo;
 	}
 	
 	public static RequestPojo getInvalidLegalEntityData() {
 		RequestPojo pojo = new RequestPojo();
-		pojo.setLegalEntity(TestDataProvider.getInvalidLegalEntity());
+		pojo.setLegalEntity(TestDataGenerator.getInvalidLegalEntity());
 		return pojo;
 	}
 
 	public static RequestPojo getInvalidProductTypeData() {
 		RequestPojo pojo = new RequestPojo();
-		pojo.setType(TestDataProvider.getInvalidProductType());
+		pojo.setType(TestDataGenerator.getInvalidProductType());
 		return pojo;
 	}
 	
 	public static RequestPojo getInvalidCurrencyPairData() {
 		RequestPojo pojo = new RequestPojo();
-		pojo.setCcyPair(TestDataProvider.getInvalidISOCurrencyCode());
+		pojo.setCcyPair(TestDataGenerator.getInvalidISOCurrencyCode());
 		return pojo;
 	}
 	
 	public static RequestPojo getInvalidStyleData() {
 		RequestPojo pojo = new RequestPojo();
-		pojo.setStyle(TestDataProvider.getInvalidStyle());
+		pojo.setStyle(TestDataGenerator.getInvalidStyle());
 		return pojo;
 	}
 

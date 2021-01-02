@@ -1,4 +1,4 @@
-package com.qe.vt.helper;
+package com.qe.vt.apihelper;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;

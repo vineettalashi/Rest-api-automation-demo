@@ -66,19 +66,19 @@ Feature: Options validations Feature
     
     @OptionsInValidData
     Scenario: Verify error message when Invalid Customer is provided
-    Given User has Invalid counterparty for product type 'Options'
+    Given User has Invalid counterparty for product type 'OptionsWithoutExerciseDate'
    	When User posts the json request as object
     Then Verify the response contains the 'is not supported. Supported counterparties: [[PLUTO2, PLUTO1]]' error message
     
     @OptionsInValidData @Defect
     Scenario: Defect: Verify error message when Invalid Legal Entity is provided. Requirement: It should accept only CS Zurich as LE. Defect: It is accepting any string as Legal Entity
-    Given User has Invalid Legal entity for product type 'Options'
+    Given User has Invalid Legal entity for product type 'OptionsWithoutExerciseDate'
    	When User posts the json request
     Then Verify the response contains the 'is not supported. Supported Legal entity: [CS Zurich]' error message
     
     @OptionsInValidData
     Scenario: Verify error message when Invalid ISO Currency is provided in ccy pair
-    Given User has Invalid ISO Currency for product type 'Options'
+    Given User has Invalid ISO Currency for product type 'OptionsWithoutExerciseDate'
    	When User posts the json request
     Then Verify the response contains the 'Invalid currency pair' error message
     

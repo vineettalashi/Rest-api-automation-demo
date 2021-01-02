@@ -1,8 +1,10 @@
-package com.qe.vt.helper;
+package com.qe.vt.utils;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.Properties;
+
+import com.qe.vt.constants.Constants;
 
 public class PropertiesLoader {
 		
@@ -13,7 +15,7 @@ public class PropertiesLoader {
     private PropertiesLoader(){
     	try {
 	        this.props=new Properties();
-	        File fileUserProp = new File(Constants.PROPERTIES_FILE_CONFIG);
+	        File fileUserProp = new File(this.getClass().getClassLoader().getResource(Constants.CONFIG_PATH).toURI());
 	        props.load(new FileInputStream(fileUserProp));
     	}catch(Exception e) {
     		e.printStackTrace();

@@ -1,4 +1,4 @@
-package com.qe.vt.helper;
+package com.qe.vt.apihelper;
 
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 
 import com.qe.vt.pojo.RequestPojo;
 import com.qe.vt.pojo.ResponsePojo;
-
 import io.restassured.response.Response;
 
 public class RestApiController {

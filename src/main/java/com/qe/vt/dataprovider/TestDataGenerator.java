@@ -1,8 +1,10 @@
-package com.qe.vt.utils;
+package com.qe.vt.dataprovider;
 
 import java.util.Currency;
 
-public class TestDataProvider {
+import com.qe.vt.utils.RandomUtils;
+
+public class TestDataGenerator {
 	
     public static String getFullName() {
         return RandomUtils.getRandomString(RandomUtils.getRandomSingleDigit())+" "+RandomUtils.getRandomString(RandomUtils.getRandomSingleDigit());

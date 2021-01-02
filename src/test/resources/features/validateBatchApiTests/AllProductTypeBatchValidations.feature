@@ -26,3 +26,9 @@ Feature: Batch API Validations Feature
     Given User has invalid data to post for validateBatch api
     When User posts the json request for validate batch api as object
     Then Verify the batch response status is 'ERROR'
+    
+    @ValidateBatchObject @Improvement
+   Scenario: Improvement Verify the Validate Batch endpoint for Invalid Data with request as Object
+    Given Improvement: User has invalid data to post for validateBatch api
+    When User posts the json request for validate batch api as object
+    Then Verify the batch response status is 'ERROR'

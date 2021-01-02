@@ -7,10 +7,10 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" },
+        plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
         glue = "com.qe.vt.steps",
         features = "classpath:features",
-        //tags = "@Defect", //Remove this comment to run only defect scenarios
+        //tags = "@Improvement", //Remove this comment to run only defect scenarios
         monochrome=true
 )
 public class FeatureRunner {
