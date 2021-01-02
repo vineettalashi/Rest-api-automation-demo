@@ -16,7 +16,7 @@
 mvn clean install -Dcucumber.options="classpath:features" -Dcucumber.options="--glue com.qe.vt.steps" -Dcucumber.options="--plugin com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 
 #Reports
-Extent Reports HTML file is present under test-output folder.
+Extent Reports HTML file is generated under test-output folder.
 
 #Tags
 @Improvement : Only run scenarios with new updations (Data Table demo, Examples demo, etc)
@@ -40,7 +40,7 @@ steps -> It consists of step definition class which has all the corresponding st
 features -> Consists of all feature files
 InputJsons-> Consists of all Input jsons being used in automation
 
-As part of improvement, I have demonstrated :
+As part of improvements, I have demonstrated :
 
 1. Test Hooks @Before and @After
 2. Added data in Extent Reports (Request and Response) for more readable reports
