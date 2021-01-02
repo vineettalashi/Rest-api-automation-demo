@@ -49,6 +49,7 @@ As part of improvement, I have demonstrated :
 4. Moved Input JSONs under src/test/resources directory
 5. Removed StringBuilder and used JSONArray put() method to create json array from multiple json objects.
 6. Removed Object Mapper from Steps file and added methods in JSON Utils to deserialize Json to Pojo
+7. Removed unused dependencies from pom.xml
 
 
 

@@ -28,7 +28,6 @@ public class JsonUtils {
         return reqPojo;
     }
 	
-	
 	public static JSONArray getJSONArrayFromJsonFile(File file) {
 		String JsonFileAsAString;JSONArray array = null;
 		try {
