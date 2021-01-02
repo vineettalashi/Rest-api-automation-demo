@@ -19,6 +19,9 @@
 #Maven Run Configuration
 #mvn clean install -Dcucumber.options="classpath:features" -Dcucumber.options="--glue com.qe.vt.steps" -Dcucumber.options="--plugin com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 
+#Tags
+@Improvement : Only run scenarios with new updations (Data Table demo, Examples demo, etc)
+
 #Framework
 #src/main/java/com/qe/vt
 apihelper -> It consists of Wrapper classes to build the Request Specification object and Execute Http methods to post the request and collect response.
