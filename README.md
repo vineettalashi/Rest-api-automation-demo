@@ -12,12 +12,11 @@
 #Runner File (JunitRunner)
 #FeatureRunner.java
 
-#Reports
-#All Scenarios : \Reports-FullSuite\
-#Defect Scenarios : \Reports-DefectsOnly\
-
 #Maven Run Configuration
-#mvn clean install -Dcucumber.options="classpath:features" -Dcucumber.options="--glue com.qe.vt.steps" -Dcucumber.options="--plugin com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+mvn clean install -Dcucumber.options="classpath:features" -Dcucumber.options="--glue com.qe.vt.steps" -Dcucumber.options="--plugin com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+
+#Reports
+Extent Reports HTML file is present under test-output folder.
 
 #Tags
 @Improvement : Only run scenarios with new updations (Data Table demo, Examples demo, etc)

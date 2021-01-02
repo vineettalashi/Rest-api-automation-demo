@@ -1,6 +1,6 @@
-Feature: Forward validations Feature using data tables and examples
+Feature: Improvement Suggested By Tauseef
   As a user
-  I want to perform Forward Validations
+  I want to perform improvement Validations
   So that I acheive a business goal
 
 	@ExamplesTest @Improvement
