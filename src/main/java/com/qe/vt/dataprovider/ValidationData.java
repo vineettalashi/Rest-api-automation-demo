@@ -12,6 +12,8 @@ import com.qe.vt.utils.DateUtils;
 
 public class ValidationData {
 	
+	private ValidationData() {}
+	
 	private static Map<String,RequestPojo> invalidDataMap = new HashMap<>();	
 
 	public static Map<String,RequestPojo> getMapOfProductTypeAndInvalidData() {
@@ -38,7 +40,7 @@ public class ValidationData {
 	}
 	
 	public static List<RequestPojo> getValidDataForBatchApi() {
-		List<RequestPojo> listOfPojo = new LinkedList<RequestPojo>();
+		List<RequestPojo> listOfPojo = new LinkedList<>();
 		listOfPojo.add(new RequestPojo());
 		listOfPojo.add(new RequestPojo());
 		listOfPojo.add(new RequestPojo());
@@ -51,14 +53,14 @@ public class ValidationData {
 		pojo.setTrader(TestDataGenerator.getFullName());
 		pojo.setTradeDate(DateUtils.getWeekdayDate());
 		pojo.setValueDate(DateUtils.getWeekdayDateAfter(pojo.getTradeDate()));
-		pojo.setCustomer(TestDataGenerator.getValidCustomer());
-		pojo.setLegalEntity(TestDataGenerator.getValidLegalEntity());
+		pojo.setCustomer(TestDataGenerator.VALID_CUSTOMER);
+		pojo.setLegalEntity(TestDataGenerator.VALID_LEGAL_ENTITY);
 		pojo.setCcyPair(TestDataGenerator.getCurrencyCodePair());
 		return pojo;
 	}
 	
 	public static List<RequestPojo> getInvalidDataForBatchApi() {
-		List<RequestPojo> listOfPojo = new LinkedList<RequestPojo>();
+		List<RequestPojo> listOfPojo = new LinkedList<>();
 		listOfPojo.add(getInvalidCounterpartyData());
 		listOfPojo.add(getInvalidCurrencyPairData());
 		listOfPojo.add(getExpiryDateAfterDeliveryDateInvalidData());
@@ -68,13 +70,13 @@ public class ValidationData {
 	
 	public static RequestPojo getValidDataForOptionsWithEuropeanStyle() {
 		RequestPojo pojo = new RequestPojo();
-		pojo.setStyle(TestDataGenerator.getStyleAsEuropean());
+		pojo.setStyle(TestDataGenerator.EUROPEAN_STYLE);
 		return pojo;
 	}
 	
 	public static RequestPojo getValidDataForOptionsWithAmericanStyle() {
 		RequestPojo pojo = new RequestPojo();
-		pojo.setStyle(TestDataGenerator.getStyleAsAmerican());
+		pojo.setStyle(TestDataGenerator.AMERICAN_STYLE);
 		return pojo;
 	}
 	
@@ -91,8 +93,8 @@ public class ValidationData {
 		pojo.setTrader(TestDataGenerator.getFullName());
 		pojo.setTradeDate(DateUtils.getWeekdayDate());
 		pojo.setValueDate(DateUtils.getWeekDayDateBefore(pojo.getTradeDate()));
-		pojo.setCustomer(TestDataGenerator.getValidCustomer());
-		pojo.setLegalEntity(TestDataGenerator.getValidLegalEntity());
+		pojo.setCustomer(TestDataGenerator.VALID_CUSTOMER);
+		pojo.setLegalEntity(TestDataGenerator.VALID_LEGAL_ENTITY);
 		pojo.setCcyPair(TestDataGenerator.getCurrencyCodePair());
 		return pojo;
 	}
@@ -119,13 +121,13 @@ public class ValidationData {
 
 	public static RequestPojo getInvalidProductTypeData() {
 		RequestPojo pojo = new RequestPojo();
-		pojo.setType(TestDataGenerator.getInvalidProductType());
+		pojo.setType(TestDataGenerator.INVALID_PRODUCT_TYPE);
 		return pojo;
 	}
 	
 	public static RequestPojo getInvalidCurrencyPairData() {
 		RequestPojo pojo = new RequestPojo();
-		pojo.setCcyPair(TestDataGenerator.getInvalidISOCurrencyCode());
+		pojo.setCcyPair(TestDataGenerator.INVALID_ISO_CURRENCY_CODE);
 		return pojo;
 	}
 	

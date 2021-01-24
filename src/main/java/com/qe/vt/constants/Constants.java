@@ -2,6 +2,8 @@ package com.qe.vt.constants;
 
 public class Constants {
 	
+	private Constants() {}
+	
 	public static final String JSON_PATH ="InputJsons/validate";
 	public static final String JSON_PATH_BATCH ="InputJsons/validateBatch";
 	public static final String CONFIG_PATH="config/ApiConfig.properties";

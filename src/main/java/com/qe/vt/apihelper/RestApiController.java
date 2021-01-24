@@ -20,32 +20,29 @@ public class RestApiController {
 	    }
 
 	    public Response executeRequestWithGetMethod(String resourceUrl) {
-	        Response response = restSpecBuilder.getRequestSpecification().get(resourceUrl);
-	        return response;
+	        return restSpecBuilder.getRequestSpecification().get(resourceUrl);
 	    }
 
 	    public ResponsePojo executePostMethodWithRequestBodyAsString(String resource, String requestBody) {
-	    	ResponsePojo response = restSpecBuilder.getRequestSpecification().body(requestBody).post(resource).as(ResponsePojo.class);
-	        return response;
+	    	return restSpecBuilder.getRequestSpecification().body(requestBody).post(resource).as(ResponsePojo.class);
 	    }
 	    
 	    public ResponsePojo executePostMethodWithRequestBodyAsObject(String resource, RequestPojo requestBody) {
-	    	ResponsePojo response = restSpecBuilder.getRequestSpecification().body(requestBody).post(resource).as(ResponsePojo.class);
-	        return response;
+	    	return restSpecBuilder.getRequestSpecification().body(requestBody).post(resource).as(ResponsePojo.class);
+	        
 	    }
 	    
 	    public List<ResponsePojo> executePostMethodWithRequestBodyAsStringBatch(String resource, String requestBody) {
 	    	Response resp = restSpecBuilder.getRequestSpecification().body(requestBody).post(resource);
-	    	logger.info("Response"+resp.asPrettyString());
-	    	List<ResponsePojo> listOfResponse = Arrays.asList(resp.as(ResponsePojo[].class));
-	        return listOfResponse;
+	    	String prettyResponse = resp.asPrettyString();
+	    	logger.info("Response {}",prettyResponse);
+	    	return Arrays.asList(resp.as(ResponsePojo[].class));
 	    }
 	    
 	    public List<ResponsePojo> executePostMethodWithRequestBodyAsListOfObject(String resource, List<RequestPojo> requestBody) {
 	        Response resp = restSpecBuilder.getRequestSpecification().body(requestBody).post(resource);
-	    	logger.info("Response"+resp.asPrettyString());
-	    	List<ResponsePojo> listOfResponse = Arrays.asList(resp.as(ResponsePojo[].class));
-	        return listOfResponse;
+	    	logger.info("Response {}",null!=resp?resp.asPrettyString():"Null Response");
+	    	return Arrays.asList(null!=resp?resp.as(ResponsePojo[].class):null);
 	    }
 
 }

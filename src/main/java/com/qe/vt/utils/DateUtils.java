@@ -6,8 +6,9 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 public class DateUtils {
-	public static LocalDate localDate = LocalDate.now();
-    public static String datePattern = "yyyy-MM-dd";
+	private DateUtils() {}
+	static LocalDate localDate = LocalDate.now();
+    static String datePattern = "yyyy-MM-dd";
     
     public static LocalDate getLocalDate() {
     	return localDate;

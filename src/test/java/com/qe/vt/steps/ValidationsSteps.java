@@ -70,12 +70,8 @@ public class ValidationsSteps {
 		JSONArray jsonArray = JsonUtils.getJSONArrayFromJsonFile(getJsonFile("Batch"));
 		jsonArray.forEach(jsonObj->
 	    		{
-					try {
-						jsonToPost = JsonUtils.getUpdatedJson((JSONObject)jsonObj, ValidationData.getValidDataForBatchApi().get(counter.getAndIncrement()));
-						finalJsonToPostBuilder.append(jsonToPost+",");
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
+					jsonToPost = JsonUtils.getUpdatedJson((JSONObject)jsonObj, ValidationData.getValidDataForBatchApi().get(counter.getAndIncrement()));
+					finalJsonToPostBuilder.append(jsonToPost+",");
 				}
 	    		);
 		finalJsonToPostBuilder.replace(finalJsonToPostBuilder.length()-1, finalJsonToPostBuilder.length(),"]");
@@ -92,12 +88,8 @@ public class ValidationsSteps {
 		AtomicInteger counter = new AtomicInteger(0);
 		jsonArray.forEach(jsonObj->
 	    		{
-					try {
-						jsonToPost = JsonUtils.getUpdatedJson((JSONObject)jsonObj, ValidationData.getInvalidDataForBatchApi().get(counter.getAndIncrement()));
-						finalJsonToPostBuilder.append(jsonToPost+",");
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
+					jsonToPost = JsonUtils.getUpdatedJson((JSONObject)jsonObj, ValidationData.getInvalidDataForBatchApi().get(counter.getAndIncrement()));
+					finalJsonToPostBuilder.append(jsonToPost+",");
 				}
 	    		);
 		finalJsonToPostBuilder.replace(finalJsonToPostBuilder.length()-1, finalJsonToPostBuilder.length(),"]");
@@ -159,7 +151,7 @@ public class ValidationsSteps {
 		reqstSpecBuilder = new RequestSpecificationBuilder().setBaseUrl(propLoader.getBaseUrl()).setContentTypeJson().setAcceptasJson();
 	    RestApiController restApiController = new RestApiController(reqstSpecBuilder);
 	    batchResponse = restApiController.executePostMethodWithRequestBodyAsStringBatch(propLoader.getValidateBatchUrl(), finalJsonToPostBuilder.toString());
-	    logger.info("Batch Response : "+ batchResponse);
+	    logger.info("Batch Response : {}",batchResponse);
 	    scenario.log(batchResponse.toString());
 	}
 	
